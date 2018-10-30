@@ -2,12 +2,12 @@
 <search>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2Fzwj.github.io%2F2018%2F10%2F30%2Fhello-world%2F</url>
+    <url>%2F2018%2F10%2F30%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
   <entry>
     <title><![CDATA[SpringBoot]]></title>
-    <url>%2Fzwj.github.io%2F2018%2F10%2F29%2Fspringboot%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%2F</url>
+    <url>%2F2018%2F10%2F29%2Fspringboot%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[一、SpringBoot项目的构建有三种方式：第一种，利用maven构建一个普通的项目，我们手动去加入依赖。在pom.xml中1.在pom中引入父pom,代码如下12345&lt;parent&gt;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;&lt;version&gt;1.5.17.RELEASE&lt;/version&gt;&lt;/parent&gt; 2.引入SpringBoot依赖，代码如下1234&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;&lt;/dependency&gt; 3.加入编译插件12345678910111213&lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;source&gt;1.8&lt;/source&gt; &lt;target&gt;1.8&lt;/target&gt; &lt;encoding&gt;UTF-8&lt;/encoding&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;/plugins&gt;&lt;/build&gt; 4.写一个启动类123456789101112131415161718@Controller//可以帮助SpringBoot应用将所有符合条件的@Configuration配置都加载到当前SpringBoot创建并使用的IoC容器。@EnableAutoConfigurationpublic class BootStarter &#123; //servlet映射地址 @RequestMapping(&quot;/hello&quot;) //返回json格式的数据 @ResponseBody public String hello()&#123; return &quot;hello world&quot;; &#125; public static void main(String[] args) &#123; // SpringApplication.run(BootStarter.class,args); &#125;&#125; 5.运行main方法，在地址栏访问localhost:8080/hello1234567 . ____ _ __ _ _ /\\ / ___&apos;_ __ _ _(_)_ __ __ _ \ \ \ \( ( )\___ | &apos;_ | &apos;_| | &apos;_ \/ _` | \ \ \ \ \\/ ___)| |_)| | | | | || (_| | ) ) ) ) &apos; |____| .__|_| |_|_| |_\__, | / / / / =========|_|==============|___/=/_/_/_/ :: Spring Boot :: (v1.5.17.RELEASE) 启动成功！ 第二种，Spring官网为我们提供了生成项目的方式*访问https://start.spring.io/ 根据提示填写，下载解压 *使用IDEA将项目打开 第三种，利用IDEA工具新建项目直接选择Spring Initializr就可以生成一个Spring Boot项目]]></content>
       <categories>
         <category>Java</category>
@@ -18,7 +18,7 @@
   </entry>
   <entry>
     <title><![CDATA[基于hexo和github搭建博客]]></title>
-    <url>%2Fzwj.github.io%2F2018%2F10%2F29%2Fhello-my-blog%2F</url>
+    <url>%2F2018%2F10%2F29%2Fhello-my-blog%2F</url>
     <content type="text"><![CDATA[111111111111111111111111111111111111111111111111111111111111]]></content>
       <categories>
         <category>搭建博客</category>
