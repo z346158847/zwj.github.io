@@ -19,12 +19,12 @@
   <entry>
     <title><![CDATA[基于hexo和github搭建博客]]></title>
     <url>%2F2018%2F10%2F29%2Fhello-my-blog%2F</url>
-    <content type="text"><![CDATA[111111111111111111111111111111111111111111111111111111111111]]></content>
+    <content type="text"><![CDATA[基于 node.js+hexo+github 搭建一个属于自己的博客！前言 从买阿里云服务器开始说起，开始研究服务器到底能做什么，最开始了解到云服务器可以是一台24小时运行的电脑， 并且拥有自己的IP，就想着先把做的仿饿了么外卖项目放到服务器上运行，经过无数的踩坑，从linux系统都不会进 到后面的关防火墙，配置安全组。再到搭建Node.js环境，git环境，连接github，终于让项目跑起来。再开始想怎样 实现员工管理系统也能在服务器上运行，又开始配置JDK，Mysql，Tomcat环境，最后几经周折也实现了（虽然还有） 一些BUG。 通过阿里云，又了解了域名相关，就想着自己是不是可以拥有一个属于自己的域名，比如说自定义的博客，也可以 在服务器上跑（不能让它闲着--！），就开始在网上搜寻相关的知识。开始真的是一头雾水，别人是一步一个脚印，我 感觉我是一步一个坑，最后摸索出使用 node.js+hexo+github 就可以实现我想要的结果，不容易不容易。 正题配置环境我们需要配置所需要的工具node.js+hexo+github 这里就暂时不做过多解释，只给出检测的方法。 在一个空文件夹下，右键Git Bash here 123node -versionnpm -versiongit -version 都能显示版本说明我们可以开始搭建了。 hexo初始化我们需要一个官方默认的hexo主题，在Git界面执行以下命令 &gt; hexo init 这是遇到的一个大坑，几KB每秒的下载速度，最后还卡住了，果断扔到服务器上下载 我上传到百度网盘，可以下载，下载后不需要执行上面的代码。 &gt; 链接：https://pan.baidu.com/s/1QZSevQU6zkvJ55DnFUWQMQ 提取码：m67r 接下来我们需要配置hexo和node依赖的包 &gt; npm install 这时我们可以查看hexo是否初始化 &gt; hexo -version 显示版本就说明hexo可以使用。 git部分git这部分，我们需要将此文件夹下的文件利用下面的代码先推到git中 1234git initgit add -Agit commit -m &quot;提交&quot;git remote add origin &quot;你的github仓库&quot; 这里需要注意的是：不要往仓库上推，仓库存的不是这部分文件，而是一些静态资源文件，比如html、css和js文件 hexo主题生成清理静态资源文件 &gt; hexo clean 生成静态资源文件 &gt; hexo g 部署项目，通过localhost:4000访问 &gt; hexo s 页面出现Hexo，此时就说明成功了 接下来的就比较简单了，打开hexo下的_config.yml文件，这个文件包含了hexo的站点配置，在最下方需要添加代码 1234deploy:type: gitrepo: &quot;这里填写你的github仓库&quot;branch: master 这个时候千万不要用git pull或者git push等命令！ 应该使用 123hexo cleanhexo ghexo d hexo d这个命令就可以把你的项目提交到你的github仓库中。 github网址生成github对我们很友好（吐槽下真的很慢），为我们提供了一个功能，生成了一个网址可以展示仓库中的项目，但这个 功能需要手动开启，打开我们的github，找到对应的仓库，找到Setting选项下的GitHub Pages，选择Source中你项 目的分支，一般是主分支。实在不行开个翻译，很好找，点击保存后，这样就会显示一个网址，这样就可以访问了。 注意：项目名需要xxx.github.io的格式，还需要在_config.yml中找到以下代码。 12url: &quot;你生成的网址&quot;root: /项目名 结束语仔细回想一下，其实挺简单的，主要是什么都不知道，还有没想到的以后再进行补充，欢迎留言评论。]]></content>
       <categories>
         <category>搭建博客</category>
       </categories>
       <tags>
-        <tag>npm</tag>
+        <tag>node</tag>
         <tag>hexo</tag>
         <tag>github</tag>
       </tags>
