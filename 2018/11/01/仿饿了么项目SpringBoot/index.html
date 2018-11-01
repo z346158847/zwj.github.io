@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前端部分后补充 #后端部分摘自老师的笔记 一、环境搭建和工具 所需环境：java,mysql,tomcat 使用工具：IDEA,Navicat 二、数据库的设计表设计 类目create table `product_category` (     `category_id` int not null auto_increment,     `category_name` varchar(64) n">
+<meta name="description" content="前端部分后补充 后端部分摘自老师的笔记 一、环境搭建和工具 所需环境：java,mysql,tomcat 使用工具：IDEA,Navicat 二、数据库的设计表设计 类目create table `product_category` (     `category_id` int not null auto_increment,     `category_name` varchar(64) no">
 <meta name="keywords" content="springboot,nginx,node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="仿饿了么项目SpringBoot">
 <meta property="og:url" content="http://www.zwjblog.top/2018/11/01/仿饿了么项目SpringBoot/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="前端部分后补充 #后端部分摘自老师的笔记 一、环境搭建和工具 所需环境：java,mysql,tomcat 使用工具：IDEA,Navicat 二、数据库的设计表设计 类目create table `product_category` (     `category_id` int not null auto_increment,     `category_name` varchar(64) n">
+<meta property="og:description" content="前端部分后补充 后端部分摘自老师的笔记 一、环境搭建和工具 所需环境：java,mysql,tomcat 使用工具：IDEA,Navicat 二、数据库的设计表设计 类目create table `product_category` (     `category_id` int not null auto_increment,     `category_name` varchar(64) no">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-01T04:29:54.934Z">
+<meta property="og:updated_time" content="2018-11-01T04:33:27.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="仿饿了么项目SpringBoot">
-<meta name="twitter:description" content="前端部分后补充 #后端部分摘自老师的笔记 一、环境搭建和工具 所需环境：java,mysql,tomcat 使用工具：IDEA,Navicat 二、数据库的设计表设计 类目create table `product_category` (     `category_id` int not null auto_increment,     `category_name` varchar(64) n">
+<meta name="twitter:description" content="前端部分后补充 后端部分摘自老师的笔记 一、环境搭建和工具 所需环境：java,mysql,tomcat 使用工具：IDEA,Navicat 二、数据库的设计表设计 类目create table `product_category` (     `category_id` int not null auto_increment,     `category_name` varchar(64) no">
 
 
 
@@ -412,7 +412,7 @@
 
       
         <h1 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h1><p>后补充</p>
-<p>#后端部分<br><em>摘自老师的笔记</em></p>
+<h1 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h1><p><em>摘自老师的笔记</em></p>
 <h2 id="一、环境搭建和工具"><a href="#一、环境搭建和工具" class="headerlink" title="一、环境搭建和工具"></a>一、环境搭建和工具</h2><p> 所需环境：java,mysql,tomcat<br> 使用工具：IDEA,Navicat</p>
 <h2 id="二、数据库的设计"><a href="#二、数据库的设计" class="headerlink" title="二、数据库的设计"></a>二、数据库的设计</h2><p><em>表设计</em></p>
 <h4 id="类目"><a href="#类目" class="headerlink" title="类目"></a>类目</h4><pre><code>create table `product_category` (
@@ -635,11 +635,11 @@ returnUrl: http://xxx.com/abc/order/161899085773669363
 <blockquote>
 <p><a href="http://xxx.com/abc/order/161899085773669363" target="_blank" rel="noopener">http://xxx.com/abc/order/161899085773669363</a></p>
 </blockquote>
-<h2 id="买家类目"><a href="#买家类目" class="headerlink" title="买家类目"></a>买家类目</h2><p>###一、dao层需要的方法<br>根据categoryType的集合来查询</p>
-<p>###二、service需要的方法<br>根据id查询<br>查询所有<br>根据categoryType的集合来查询<br>新增和更新</p>
-<h2 id="商品-1"><a href="#商品-1" class="headerlink" title="商品"></a>商品</h2><h3 id="一、dao层需要的方法"><a href="#一、dao层需要的方法" class="headerlink" title="一、dao层需要的方法"></a>一、dao层需要的方法</h3><p>根据商品状态来查询</p>
-<h3 id="二、service层需要的方法"><a href="#二、service层需要的方法" class="headerlink" title="二、service层需要的方法"></a>二、service层需要的方法</h3><p>根据id查询<br>查询所有上架商品<br>查询所有商品（给管理端使用，需要包含分页）<br>增加和修改方法</p>
-<h3 id="三、买家端API的开发"><a href="#三、买家端API的开发" class="headerlink" title="三、买家端API的开发"></a>三、买家端API的开发</h3><p>提供一个查询所有商品和类别的api接口（需要重新包装数据）</p>
+<h2 id="四、买家类目"><a href="#四、买家类目" class="headerlink" title="四、买家类目"></a>四、买家类目</h2><h3 id="1-dao层需要的方法"><a href="#1-dao层需要的方法" class="headerlink" title="1.dao层需要的方法"></a>1.dao层需要的方法</h3><p>根据categoryType的集合来查询</p>
+<h3 id="2-service需要的方法"><a href="#2-service需要的方法" class="headerlink" title="2.service需要的方法"></a>2.service需要的方法</h3><p>根据id查询<br>查询所有<br>根据categoryType的集合来查询<br>新增和更新</p>
+<h2 id="五、商品"><a href="#五、商品" class="headerlink" title="五、商品"></a>五、商品</h2><h3 id="1-dao层需要的方法-1"><a href="#1-dao层需要的方法-1" class="headerlink" title="1.dao层需要的方法"></a>1.dao层需要的方法</h3><p>根据商品状态来查询</p>
+<h3 id="2-service层需要的方法"><a href="#2-service层需要的方法" class="headerlink" title="2.service层需要的方法"></a>2.service层需要的方法</h3><p>根据id查询<br>查询所有上架商品<br>查询所有商品（给管理端使用，需要包含分页）<br>增加和修改方法</p>
+<h3 id="3-买家端API的开发"><a href="#3-买家端API的开发" class="headerlink" title="3.买家端API的开发"></a>3.买家端API的开发</h3><p>提供一个查询所有商品和类别的api接口（需要重新包装数据）</p>
 
       
     </div>
@@ -889,7 +889,7 @@ returnUrl: http://xxx.com/abc/order/161899085773669363
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端部分"><span class="nav-text">前端部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、环境搭建和工具"><span class="nav-text">一、环境搭建和工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数据库的设计"><span class="nav-text">二、数据库的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类目"><span class="nav-text">类目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#商品"><span class="nav-text">商品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#订单"><span class="nav-text">订单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#订单商品"><span class="nav-text">订单商品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卖家"><span class="nav-text">卖家</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Api文档"><span class="nav-text">三、Api文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#商品列表"><span class="nav-text">商品列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建订单"><span class="nav-text">创建订单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#订单列表"><span class="nav-text">订单列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询订单详情"><span class="nav-text">查询订单详情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取消订单"><span class="nav-text">取消订单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取openid"><span class="nav-text">获取openid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支付订单"><span class="nav-text">支付订单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#买家类目"><span class="nav-text">买家类目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商品-1"><span class="nav-text">商品</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、dao层需要的方法"><span class="nav-text">一、dao层需要的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、service层需要的方法"><span class="nav-text">二、service层需要的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、买家端API的开发"><span class="nav-text">三、买家端API的开发</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端部分"><span class="nav-text">前端部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后端部分"><span class="nav-text">后端部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、环境搭建和工具"><span class="nav-text">一、环境搭建和工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、数据库的设计"><span class="nav-text">二、数据库的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类目"><span class="nav-text">类目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#商品"><span class="nav-text">商品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#订单"><span class="nav-text">订单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#订单商品"><span class="nav-text">订单商品</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卖家"><span class="nav-text">卖家</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Api文档"><span class="nav-text">三、Api文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#商品列表"><span class="nav-text">商品列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建订单"><span class="nav-text">创建订单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#订单列表"><span class="nav-text">订单列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询订单详情"><span class="nav-text">查询订单详情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取消订单"><span class="nav-text">取消订单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取openid"><span class="nav-text">获取openid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支付订单"><span class="nav-text">支付订单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、买家类目"><span class="nav-text">四、买家类目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dao层需要的方法"><span class="nav-text">1.dao层需要的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-service需要的方法"><span class="nav-text">2.service需要的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、商品"><span class="nav-text">五、商品</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dao层需要的方法-1"><span class="nav-text">1.dao层需要的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-service层需要的方法"><span class="nav-text">2.service层需要的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-买家端API的开发"><span class="nav-text">3.买家端API的开发</span></a></li></ol></li></ol></div>
             
 
           </div>
