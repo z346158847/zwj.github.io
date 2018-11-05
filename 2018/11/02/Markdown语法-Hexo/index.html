@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Markdown,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="最美的你不是生如夏花，而是在时间的长河里波澜不惊。">
+<meta name="description" content="转载：https://blog.csdn.net/zhuzhuyule/article/details/58347687?utm_source=blogxgwz2 Hexo下的Markdown语法Markdown时一种轻量级的标记语言，优点在于：  专注专注你的文字内容而不是排版样式。 轻松的导出 HTML、PDF 和本身的 .md 文件。 纯文本内容，兼容所有的文本编辑器与字处理软件。 可读，直">
+<meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown语法(Hexo)">
 <meta property="og:url" content="http://www.zwjblog.top/2018/11/02/Markdown语法-Hexo/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="最美的你不是生如夏花，而是在时间的长河里波澜不惊。">
+<meta property="og:description" content="转载：https://blog.csdn.net/zhuzhuyule/article/details/58347687?utm_source=blogxgwz2 Hexo下的Markdown语法Markdown时一种轻量级的标记语言，优点在于：  专注专注你的文字内容而不是排版样式。 轻松的导出 HTML、PDF 和本身的 .md 文件。 纯文本内容，兼容所有的文本编辑器与字处理软件。 可读，直">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T13:51:29.516Z">
+<meta property="og:updated_time" content="2018-11-05T13:35:14.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown语法(Hexo)">
-<meta name="twitter:description" content="最美的你不是生如夏花，而是在时间的长河里波澜不惊。">
+<meta name="twitter:description" content="转载：https://blog.csdn.net/zhuzhuyule/article/details/58347687?utm_source=blogxgwz2 Hexo下的Markdown语法Markdown时一种轻量级的标记语言，优点在于：  专注专注你的文字内容而不是排版样式。 轻松的导出 HTML、PDF 和本身的 .md 文件。 纯文本内容，兼容所有的文本编辑器与字处理软件。 可读，直">
 
 
 
@@ -339,6 +340,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,7 +411,141 @@
       
 
       
-        
+        <p>转载：<a href="https://blog.csdn.net/zhuzhuyule/article/details/58347687?utm_source=blogxgwz2" target="_blank" rel="noopener">https://blog.csdn.net/zhuzhuyule/article/details/58347687?utm_source=blogxgwz2</a></p>
+<h1 id="Hexo下的Markdown语法"><a href="#Hexo下的Markdown语法" class="headerlink" title="Hexo下的Markdown语法"></a>Hexo下的Markdown语法</h1><p><strong>Markdown时一种轻量级的标记语言，优点在于：</strong></p>
+<ul>
+<li>专注专注你的文字内容而不是排版样式。</li>
+<li>轻松的导出 HTML、PDF 和本身的 .md 文件。</li>
+<li>纯文本内容，兼容所有的文本编辑器与字处理软件。</li>
+<li>可读，直观。适合所有人的写作语言。</li>
+</ul>
+<blockquote>
+<p>Hexo下使用的MarkDown为Github的GFM，风格很漂亮，简洁美观大方。但是GFM 的MarkDown语法和标准 的MarkDown稍有不同，使用过程中需要注意一些。</p>
+</blockquote>
+<h2 id="语法简明描述"><a href="#语法简明描述" class="headerlink" title="语法简明描述"></a>语法简明描述</h2><pre><code>分段 两个回车
+换行 两个空格 + 回车
+标题 # ~ ######，#号的个数表示几级标题，即表示一级标题到六级标题
+强调 **文字** ， __文字__ ， _文字_ ， *文字* ， 文字
+引用 &gt; 注意后面紧跟个空格
+表格 - 和 | 分割行和列 ， : 控制对其方式
+代码块 四个空格 开头或， 使用`三个反引号 代码内容 三个反引号（Esc下边的键）
+链接 [文字](链接地址)
+图片 ![图片说明](图片地址) ，地址可以是本地路劲，也可以是网络地址
+列表 * ， + ， - ， 1. ，选其中之一，注意后面紧跟个空格
+</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><pre><code># 欢迎使用Markdown编辑器写博客    //一级标题 对应 &lt;h1&gt; &lt;/h1&gt;
+## 标题输入                     //二级标题 对应 &lt;h2&gt; &lt;/h2&gt;
+### 三级标题                    //三级标题 对应 &lt;h3&gt; &lt;/h3&gt;
+#### 四级标题                   //四级标题 对应 &lt;h4&gt; &lt;/h4&gt;
+##### 五级标题                  //五级标题 对应 &lt;h5&gt; &lt;/h5&gt;
+###### 六级标题                 //六级标题 对应 &lt;h6&gt; &lt;/h6&gt;
+####### 七级标题                //抱歉，木有了（但是他会影响生成的目录，目录行多出一行空行）
+</code></pre><h2 id="内容强调"><a href="#内容强调" class="headerlink" title="内容强调"></a>内容强调</h2><h3 id="加粗、斜体"><a href="#加粗、斜体" class="headerlink" title="加粗、斜体"></a>加粗、斜体</h3><pre><code>字体 **加粗** 显示
+字体 *斜体* 显示
+字体 ***加粗并斜体*** 显示
+字体 __加粗__ 显示
+字体 _斜体_ 显示
+字体 ___加粗并斜体___ 显示
+组合 *__加粗并斜体__* 显示
+</code></pre><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><pre><code>~~删除一段文本~~
+</code></pre><h3 id="高亮"><a href="#高亮" class="headerlink" title="高亮"></a>高亮</h3><pre><code>使用&lt;code&gt;\`&lt;/code&gt;来强调字符   //想打出  ` (反引号)需要转义的，加&lt;code&gt;&lt;/code&gt;标签强调
+比如`突出背景色`来显示强调效果
+</code></pre><h3 id="引用显示"><a href="#引用显示" class="headerlink" title="引用显示"></a>引用显示</h3><p><strong>标准使用</strong></p>
+<pre><code>&gt; 每行开始都使用 &apos;&gt;&apos;；
+&gt; 引用**开始**；
+&gt; 引用**换行**；
+&gt; 引用**结束**。
+
+&gt; 还在引用中！
+</code></pre><p><code>两个回车</code>结束引用！</p>
+<p><strong>省略使用</strong><br>    &gt; 仅第一行加应用；<br>    引用<strong>开始</strong>；<br>    引用<strong>换行</strong>；<br>    引用<strong>结束</strong>；</p>
+<p><code>两个回车</code>结束引用,不在引用范围内了！</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p><em>表格语法：</em></p>
+<pre><code>列1   | 列2 | 列3
+----- | --- | ----
+第1行 | 12  | 13
+第2行 | 22  | 23
+第3行 | 32  | 33
+</code></pre><blockquote>
+<p>可以使用冒号来定义对齐方式：</p>
+</blockquote>
+<pre><code>| 左对齐 | 右对齐 | 居中 |
+| :---- | ----:| :--: |
+</code></pre><h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>*代码块语法遵循标准 markdown 代码，使用三个反引号开始，三个反引号结束 例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">Java</span><br><span class="line">System.out.println(&quot;Hello World&quot;)</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<p><strong>特别提示</strong></p>
+<pre><code>如何在代码块中打出 三个反引号
+实际上是使用 4个` 包含 3个` 就可以了，想表示更多，最外层+1就好了。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">````</span><br><span class="line">```</span><br><span class="line">```</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="链接插入"><a href="#链接插入" class="headerlink" title="链接插入"></a>链接插入</h2><pre><code>[博客]https://www.zwjblog.top
+</code></pre><h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><pre><code>![我的头像]https://www.zwjblog.top/images/qqtouxiang.jpg
+</code></pre><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><pre><code>* *列表展示
+* *列表展示
+ * *列表展示
++ +列表展示
++ +列表展示
+ + +列表展示
+- -列表展示
+- -列表展示
+ - -列表展示
+</code></pre><p><strong>效果如下：</strong></p>
+<blockquote>
+<ul>
+<li>*列表展示</li>
+<li>*列表展示<ul>
+<li>*列表展示</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>+列表展示</li>
+<li>+列表展示<ul>
+<li>+列表展示</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>-列表展示</li>
+<li>-列表展示<ul>
+<li>-列表展示</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><pre><code>这种方式不用手动设置序号，自动生成列表序列
+1. **我是一级序列**
+1. **我是一级序列**
+1. **我是一级序列**
+ 1. *我是二级序列*
+ 1. *我是二级序列*
+ 1. *我是二级序列*
+1. **我是一级序列**
+1. **我是一级序列**
+ 1. *我是二级序列*
+ 1. *我是二级序列*
+  1. 还是二级序列，没有三级序列
+</code></pre><p><strong>效果如下：</strong></p>
+<blockquote>
+<p>这种方式不用手动设置序号，自动生成列表序列</p>
+<ol>
+<li><strong>我是一级序列</strong></li>
+<li><strong>我是一级序列</strong></li>
+<li><strong>我是一级序列</strong><ol>
+<li><em>我是二级序列</em> //多于一级序列一个空格</li>
+<li><em>我是二级序列</em> //多于一级序列一个空格</li>
+<li><em>我是二级序列</em> //多于一级序列一个空格</li>
+</ol>
+</li>
+<li><strong>我是一级序列</strong></li>
+<li><strong>我是一级序列</strong><ol>
+<li><em>我是二级序列</em> //多于一级序列一个空格</li>
+<li><em>我是二级序列</em> //多于一级序列一个空格</li>
+<li>还是二级序列，没有三级序列 // //多于二级序列一个空格，仍然是二级序列</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h2 id="链接自动检测"><a href="#链接自动检测" class="headerlink" title="链接自动检测"></a>链接自动检测</h2><p>博客：<a href="https://www.zwjblog.top">https://www.zwjblog.top</a></p>
+
       
     </div>
     
@@ -441,6 +598,12 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
+          
+        </div>
       
 
       
@@ -518,8 +681,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -536,7 +708,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,7 +730,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -597,6 +769,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo下的Markdown语法"><span class="nav-text">Hexo下的Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法简明描述"><span class="nav-text">语法简明描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容强调"><span class="nav-text">内容强调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加粗、斜体"><span class="nav-text">加粗、斜体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除线"><span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮"><span class="nav-text">高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用显示"><span class="nav-text">引用显示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码块"><span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接插入"><span class="nav-text">链接插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片插入"><span class="nav-text">图片插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-text">有序列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接自动检测"><span class="nav-text">链接自动检测</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

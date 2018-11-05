@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Maven远程仓库]]></title>
+    <url>%2F2018%2F11%2F05%2FMaven%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Git的基本使用]]></title>
     <url>%2F2018%2F11%2F03%2FGit%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[Git简介Git是目前世界上最先进的分布式版本控制系统。Git是分布式版本控制系统，它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。 Git下载https://git-scm.com/downloads一路next就可以在桌面右键出现Git Bash here和Git GUI here就说明成功了 Git基本使用配置用户名，邮箱 git config –global user.email “你的邮箱”git config –global user.name “你的用户名” 这个是用来配置本地仓库的，可以随意填写 创建一个本地版本仓库接下来我们创建第一个仓库1.创建一个空白文件夹，目录不包含中文，右键Git Bash here，输入 git init 我们可以看到当前目录出现了一个.git目录（这是个默认隐藏的文件夹）2.创建一个hellogit.txt文件3.添加文件到本地仓库 git add hellogit.txtgit commit -m “文件描述” 这样我们就把这个文件添加到了本地仓库4.把文件中加一些文字，执行以下命令 git status 查看仓库当前状态，提示有文件被修改了，需要再次执行git add和git commit 版本回退1.打印日志 git log //查看提交历史git reflog //查看命令历史git reset –hard “” //填写你想回退的版本的id 2.查看当前状态 git status 3.删除命令 git rm “文件名”git commit -m “文件描述” 注意：提交到仓库的最好使用命令删除 远程仓库代码托管平台： 码云(gitee.com)：是开源中国社区团队推出的基于Git的快速的、免费的、稳定的在线代码托管平台，不限制私有库和公有库数量。有个缺点是使用page功能时自定义域名需要付费。 github(github.com)：是全球最大的开源社区，基于git的版本托管平台。私有库需要付费，访问速度慢。之前申请的号无故被封，还是得用~ 1.创建SSHkey，以github举例 ssh-keygen -t rsa -C “邮箱” 将此ssh添加到Github的个人设置中的SSH中 ssh -T git@github.com显示Hi，xxxxx就说明成功了 2.创建origin git remote add origin “远程仓库名” //添加远程仓库git remote -v //查看当前绑定仓库git remote remove “远程仓库名” //删除远程仓库 3.向远程仓库推送 git push -u origin mastergit pull origin master //同步远程仓库到本地 4.克隆仓库 git clone “远程仓库名”]]></content>
@@ -14,7 +19,13 @@
   <entry>
     <title><![CDATA[Markdown语法(Hexo)]]></title>
     <url>%2F2018%2F11%2F02%2FMarkdown%E8%AF%AD%E6%B3%95-Hexo%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[转载：https://blog.csdn.net/zhuzhuyule/article/details/58347687?utm_source=blogxgwz2 Hexo下的Markdown语法Markdown时一种轻量级的标记语言，优点在于： 专注专注你的文字内容而不是排版样式。 轻松的导出 HTML、PDF 和本身的 .md 文件。 纯文本内容，兼容所有的文本编辑器与字处理软件。 可读，直观。适合所有人的写作语言。 Hexo下使用的MarkDown为Github的GFM，风格很漂亮，简洁美观大方。但是GFM 的MarkDown语法和标准 的MarkDown稍有不同，使用过程中需要注意一些。 语法简明描述分段 两个回车 换行 两个空格 + 回车 标题 # ~ ######，#号的个数表示几级标题，即表示一级标题到六级标题 强调 **文字** ， __文字__ ， _文字_ ， *文字* ， 文字 引用 &gt; 注意后面紧跟个空格 表格 - 和 | 分割行和列 ， : 控制对其方式 代码块 四个空格 开头或， 使用`三个反引号 代码内容 三个反引号（Esc下边的键） 链接 [文字](链接地址) 图片 ![图片说明](图片地址) ，地址可以是本地路劲，也可以是网络地址 列表 * ， + ， - ， 1. ，选其中之一，注意后面紧跟个空格 标题# 欢迎使用Markdown编辑器写博客 //一级标题 对应 &lt;h1&gt; &lt;/h1&gt; ## 标题输入 //二级标题 对应 &lt;h2&gt; &lt;/h2&gt; ### 三级标题 //三级标题 对应 &lt;h3&gt; &lt;/h3&gt; #### 四级标题 //四级标题 对应 &lt;h4&gt; &lt;/h4&gt; ##### 五级标题 //五级标题 对应 &lt;h5&gt; &lt;/h5&gt; ###### 六级标题 //六级标题 对应 &lt;h6&gt; &lt;/h6&gt; ####### 七级标题 //抱歉，木有了（但是他会影响生成的目录，目录行多出一行空行） 内容强调加粗、斜体字体 **加粗** 显示 字体 *斜体* 显示 字体 ***加粗并斜体*** 显示 字体 __加粗__ 显示 字体 _斜体_ 显示 字体 ___加粗并斜体___ 显示 组合 *__加粗并斜体__* 显示 删除线~~删除一段文本~~ 高亮使用&lt;code&gt;\`&lt;/code&gt;来强调字符 //想打出 ` (反引号)需要转义的，加&lt;code&gt;&lt;/code&gt;标签强调 比如`突出背景色`来显示强调效果 引用显示标准使用 &gt; 每行开始都使用 &apos;&gt;&apos;； &gt; 引用**开始**； &gt; 引用**换行**； &gt; 引用**结束**。 &gt; 还在引用中！ 两个回车结束引用！ 省略使用 &gt; 仅第一行加应用； 引用开始； 引用换行； 引用结束； 两个回车结束引用,不在引用范围内了！ 表格表格语法： 列1 | 列2 | 列3 ----- | --- | ---- 第1行 | 12 | 13 第2行 | 22 | 23 第3行 | 32 | 33 可以使用冒号来定义对齐方式： | 左对齐 | 右对齐 | 居中 | | :---- | ----:| :--: | 代码块*代码块语法遵循标准 markdown 代码，使用三个反引号开始，三个反引号结束 例如： 1234```JavaSystem.out.println(&quot;Hello World&quot;)``` 特别提示 如何在代码块中打出 三个反引号 实际上是使用 4个` 包含 3个` 就可以了，想表示更多，最外层+1就好了。 1234`````````````` 链接插入[博客]https://www.zwjblog.top 图片插入![我的头像]https://www.zwjblog.top/images/qqtouxiang.jpg 列表无序列表* *列表展示 * *列表展示 * *列表展示 + +列表展示 + +列表展示 + +列表展示 - -列表展示 - -列表展示 - -列表展示 效果如下： *列表展示 *列表展示 *列表展示 +列表展示 +列表展示 +列表展示 -列表展示 -列表展示 -列表展示 有序列表这种方式不用手动设置序号，自动生成列表序列 1. **我是一级序列** 1. **我是一级序列** 1. **我是一级序列** 1. *我是二级序列* 1. *我是二级序列* 1. *我是二级序列* 1. **我是一级序列** 1. **我是一级序列** 1. *我是二级序列* 1. *我是二级序列* 1. 还是二级序列，没有三级序列 效果如下： 这种方式不用手动设置序号，自动生成列表序列 我是一级序列 我是一级序列 我是一级序列 我是二级序列 //多于一级序列一个空格 我是二级序列 //多于一级序列一个空格 我是二级序列 //多于一级序列一个空格 我是一级序列 我是一级序列 我是二级序列 //多于一级序列一个空格 我是二级序列 //多于一级序列一个空格 还是二级序列，没有三级序列 // //多于二级序列一个空格，仍然是二级序列 链接自动检测博客：https://www.zwjblog.top]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java多线程的基本理解]]></title>
