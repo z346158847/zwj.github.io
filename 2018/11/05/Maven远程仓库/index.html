@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Maven,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="最美的你不是生如夏花，而是在时间的长河里波澜不惊。">
+<meta name="description" content="Maven配置中央仓库maven作为一个项目管理工具确实为我们提供了很大的方便，但是在国内这个网络下对我们就不是很友好了，阿里云和华为云都为我们提供了中央仓库，个人推荐华为云，因为在学习SpringBoot时，出现了jar包缺少依赖的问题，而华为云没有。 本地仓库在这里先提一下修改本地仓库的储存路径，默认情况下maven会在用户目录下创建.m2/repository/的仓库目录，但一般情况下，我们">
+<meta name="keywords" content="Maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven远程仓库">
 <meta property="og:url" content="http://www.zwjblog.top/2018/11/05/Maven远程仓库/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="最美的你不是生如夏花，而是在时间的长河里波澜不惊。">
+<meta property="og:description" content="Maven配置中央仓库maven作为一个项目管理工具确实为我们提供了很大的方便，但是在国内这个网络下对我们就不是很友好了，阿里云和华为云都为我们提供了中央仓库，个人推荐华为云，因为在学习SpringBoot时，出现了jar包缺少依赖的问题，而华为云没有。 本地仓库在这里先提一下修改本地仓库的储存路径，默认情况下maven会在用户目录下创建.m2/repository/的仓库目录，但一般情况下，我们">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-05T12:52:42.059Z">
+<meta property="og:updated_time" content="2018-11-05T14:00:02.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven远程仓库">
-<meta name="twitter:description" content="最美的你不是生如夏花，而是在时间的长河里波澜不惊。">
+<meta name="twitter:description" content="Maven配置中央仓库maven作为一个项目管理工具确实为我们提供了很大的方便，但是在国内这个网络下对我们就不是很友好了，阿里云和华为云都为我们提供了中央仓库，个人推荐华为云，因为在学习SpringBoot时，出现了jar包缺少依赖的问题，而华为云没有。 本地仓库在这里先提一下修改本地仓库的储存路径，默认情况下maven会在用户目录下创建.m2/repository/的仓库目录，但一般情况下，我们">
 
 
 
@@ -339,6 +340,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -388,7 +411,45 @@
       
 
       
-        
+        <h1 id="Maven配置中央仓库"><a href="#Maven配置中央仓库" class="headerlink" title="Maven配置中央仓库"></a>Maven配置中央仓库</h1><p>maven作为一个项目管理工具确实为我们提供了很大的方便，但是在国内这个网络下对我们就不是很友好了，阿里云和华为云都为我们提供了中央仓库，个人推荐华为云，因为在学习SpringBoot时，出现了jar包缺少依赖的问题，而华为云没有。</p>
+<h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><p>在这里先提一下修改本地仓库的储存路径，默认情况下maven会在用户目录下创建.m2/repository/的仓库目录，但一般情况下，我们不希望在C盘有过多的文件，<br>我们需要在找到</p>
+<blockquote>
+<p>\apache-maven\conf\settings.xml</p>
+</blockquote>
+<p>打开，找到settings标签</p>
+<pre><code>&lt;settings&gt;
+    //将默认仓库注释掉，添加自定义仓库路径
+    &lt;localRepository&gt;D:\Program Files\JAVA\mavenRepository&lt;/localRepository&gt;
+&lt;/settings&gt;
+</code></pre><p>这样maven下载jar包的时候就会下载到自定义路径中</p>
+<h2 id="阿里云中央仓库"><a href="#阿里云中央仓库" class="headerlink" title="阿里云中央仓库"></a>阿里云中央仓库</h2><p><strong>修改远程仓库为阿里云中央仓库</strong></p>
+<p>还是在settings.xml配置文件在mirrors标签中添加一个mirror</p>
+<pre><code>&lt;mirrors&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;alimaven&lt;/id&gt;
+      &lt;name&gt;aliyun maven&lt;/name&gt;
+      &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+&lt;/mirrors&gt;
+</code></pre><p>这样就配置成功了</p>
+<h2 id="华为云中央仓库"><a href="#华为云中央仓库" class="headerlink" title="华为云中央仓库"></a>华为云中央仓库</h2><p><strong>修改远程仓库为华为云中央仓库</strong></p>
+<p>操作差不多，需要多加一步，先在settings.xml配置文件在mirrors标签中添加一个mirror</p>
+<pre><code>&lt;mirror&gt;
+        &lt;id&gt;huaweicloud&lt;/id&gt;
+        &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+        &lt;url&gt;https://mirrors.huaweicloud.com/repository/maven/&lt;/url&gt;
+    &lt;/mirror&gt;
+</code></pre><p>还需要在servers标签中添加一个server</p>
+<pre><code>&lt;servers&gt;
+    &lt;server&gt;
+        &lt;id&gt;huaweicloud&lt;/id&gt;
+        &lt;username&gt;anonymous&lt;/username&gt;
+        &lt;password&gt;devcloud&lt;/password&gt;
+    &lt;/server&gt;
+&lt;/servers&gt;
+</code></pre><p>开始体验飞一般的下载速度吧！</p>
+
       
     </div>
     
@@ -441,6 +502,12 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Maven/" rel="tag"><i class="fa fa-tag"></i> Maven</a>
+          
+        </div>
       
 
       
@@ -514,8 +581,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -554,7 +630,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -593,6 +669,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven配置中央仓库"><span class="nav-text">Maven配置中央仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地仓库"><span class="nav-text">本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里云中央仓库"><span class="nav-text">阿里云中央仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#华为云中央仓库"><span class="nav-text">华为云中央仓库</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[Maven远程仓库]]></title>
     <url>%2F2018%2F11%2F05%2FMaven%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Maven配置中央仓库maven作为一个项目管理工具确实为我们提供了很大的方便，但是在国内这个网络下对我们就不是很友好了，阿里云和华为云都为我们提供了中央仓库，个人推荐华为云，因为在学习SpringBoot时，出现了jar包缺少依赖的问题，而华为云没有。 本地仓库在这里先提一下修改本地仓库的储存路径，默认情况下maven会在用户目录下创建.m2/repository/的仓库目录，但一般情况下，我们不希望在C盘有过多的文件，我们需要在找到 \apache-maven\conf\settings.xml 打开，找到settings标签 &lt;settings&gt; //将默认仓库注释掉，添加自定义仓库路径 &lt;localRepository&gt;D:\Program Files\JAVA\mavenRepository&lt;/localRepository&gt; &lt;/settings&gt; 这样maven下载jar包的时候就会下载到自定义路径中 阿里云中央仓库修改远程仓库为阿里云中央仓库 还是在settings.xml配置文件在mirrors标签中添加一个mirror &lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;/mirrors&gt; 这样就配置成功了 华为云中央仓库修改远程仓库为华为云中央仓库 操作差不多，需要多加一步，先在settings.xml配置文件在mirrors标签中添加一个mirror &lt;mirror&gt; &lt;id&gt;huaweicloud&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;url&gt;https://mirrors.huaweicloud.com/repository/maven/&lt;/url&gt; &lt;/mirror&gt; 还需要在servers标签中添加一个server &lt;servers&gt; &lt;server&gt; &lt;id&gt;huaweicloud&lt;/id&gt; &lt;username&gt;anonymous&lt;/username&gt; &lt;password&gt;devcloud&lt;/password&gt; &lt;/server&gt; &lt;/servers&gt; 开始体验飞一般的下载速度吧！]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Maven</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Git的基本使用]]></title>
