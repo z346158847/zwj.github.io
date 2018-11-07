@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Math ceil(),floor(),round()方法]]></title>
+    <url>%2F2018%2F11%2F07%2FMath-ceil-floor-round-%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Math.ceil()对一个数进行向上取整(个人理解向大转)使用方法 Math.ceil(x); 返回值：返回大于或等于x，并且与之最接近的整数。正数则把小数“入”，负数则把小数“舍”。例如： Math.ceil(1.2); //输出2 Math.ceil(1.8); //输出2 Math.ceil(-1.2); //输出-1 Math.ceil(-1.8); //输出-1 Math.floor()对一个数进行向下取整（个人理解向小转）使用方法 Math.floor(x); 返回值：返回小于或等于x并且与之最为接近的整数。正数则把小数“舍”，负数则把小数“入”。例如： Math.floor(1.2); //输出1 Math.floor(1.8); //输出1 Math.floor(-1.2); //输出-2 Math.floor(-1.8); //输出-2 Math.round()四舍五入取整使用方法 Math.round(x); 返回值：与x最接近的整数。 Math.floor(1.2); //输出1 Math.floor(1.8); //输出2 Math.floor(-1.2); //输出-1 Math.floor(-1.8); //输出-2]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Maven远程仓库]]></title>
     <url>%2F2018%2F11%2F05%2FMaven%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%2F</url>
     <content type="text"><![CDATA[Maven配置中央仓库maven作为一个项目管理工具确实为我们提供了很大的方便，但是在国内这个网络下对我们就不是很友好了，阿里云和华为云都为我们提供了中央仓库，个人推荐华为云，因为在学习SpringBoot时，出现了jar包缺少依赖的问题，而华为云没有。 本地仓库在这里先提一下修改本地仓库的储存路径，默认情况下maven会在用户目录下创建.m2/repository/的仓库目录，但一般情况下，我们不希望在C盘有过多的文件，我们需要在找到 \apache-maven\conf\settings.xml 打开，找到settings标签 &lt;settings&gt; //将默认仓库注释掉，添加自定义仓库路径 &lt;localRepository&gt;D:\Program Files\JAVA\mavenRepository&lt;/localRepository&gt; &lt;/settings&gt; 这样maven下载jar包的时候就会下载到自定义路径中 阿里云中央仓库修改远程仓库为阿里云中央仓库 还是在settings.xml配置文件在mirrors标签中添加一个mirror &lt;mirrors&gt; &lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;/mirrors&gt; 这样就配置成功了 华为云中央仓库修改远程仓库为华为云中央仓库 操作差不多，需要多加一步，先在settings.xml配置文件在mirrors标签中添加一个mirror &lt;mirror&gt; &lt;id&gt;huaweicloud&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;url&gt;https://mirrors.huaweicloud.com/repository/maven/&lt;/url&gt; &lt;/mirror&gt; 还需要在servers标签中添加一个server &lt;servers&gt; &lt;server&gt; &lt;id&gt;huaweicloud&lt;/id&gt; &lt;username&gt;anonymous&lt;/username&gt; &lt;password&gt;devcloud&lt;/password&gt; &lt;/server&gt; &lt;/servers&gt; 开始体验飞一般的下载速度吧！]]></content>
@@ -52,7 +63,7 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Api</tag>
+        <tag>api</tag>
       </tags>
   </entry>
   <entry>
@@ -63,7 +74,9 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>springboot,nginx,node</tag>
+        <tag>node</tag>
+        <tag>springboot</tag>
+        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -78,14 +91,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[基于node.jshexo,github搭建博客]]></title>
+    <title><![CDATA[基于node.js,hexo,github搭建博客]]></title>
     <url>%2F2018%2F10%2F29%2Fhello-my-blog%2F</url>
     <content type="text"><![CDATA[基于 node.js+hexo+github 搭建一个属于自己的博客！ 前言&emsp;&emsp;从买阿里云服务器开始说起，开始研究服务器到底能做什么，最开始了解到云服务器可以是一台24小时运行的电脑，并且拥有自己的IP，就想着先把做的仿饿了么外卖项目放到服务器上运行，经过无数的踩坑，从linux系统都不会进到后面的关防火墙，配置安全组。再到搭建Node.js环境，git环境，连接github，终于让项目跑起来。再开始想怎样实现员工管理系统也能在服务器上运行，又开始配置JDK，Mysql，Tomcat环境，最后几经周折也实现了（虽然还有）一些BUG。 &emsp;&emsp;通过阿里云，又了解了域名相关，就想着自己是不是可以拥有一个属于自己的域名，比如说自定义的博客，也可以在服务器上跑（不能让它闲着–！），就开始在网上搜寻相关的知识。开始真的是一头雾水，别人是一步一个脚印，我感觉我是一步一个坑，最后摸索出用node.js+hexo+github 就可以实现我想要的结果，不容易不容易。 正题配置环境我们需要配置所需要的工具node.js+hexo+github这里就暂时不做过多解释，只给出检测的方法。在一个空文件夹下，右键Git Bash here node -version npm -version git -version 都能显示版本说明我们可以开始搭建了。 hexo初始化我们需要一个官方默认的hexo主题，在Git界面执行以下命令 hexo init 这是遇到的一个大坑，几KB每秒的下载速度，最后还卡住了，果断扔到服务器上下载。我上传到百度网盘，可以下载，下载后不需要执行上面的代码。 链接：https://pan.baidu.com/s/1QZSevQU6zkvJ55DnFUWQMQ提取码：m67r 接下来我们需要配置hexo和node依赖的包 npm install 这时我们可以查看hexo是否初始化 hexo -version 显示版本就说明hexo可以使用。 git部分git这部分，我们需要将此文件夹下的文件利用下面的代码先推到git中 git init git add -A git commit -m &quot;提交&quot; git remote add origin &quot;你的github仓库&quot; 这里需要注意的是：不要往仓库上推，仓库存的不是这部分文件，而是一些静态资源文件，比如html、css和js文件。 hexo主题生成清理静态资源文件 hexo clean 生成静态资源文件 hexo g 部署项目，通过localhost:4000访问 hexo s 页面出现Hexo，此时就说明成功了&emsp;&emsp;接下来的就比较简单了，打开hexo下的_config.yml文件，这个文件包含了hexo的站点配置，在最下方需要添加代码 deploy: type: git repo: &quot;这里填写你的github仓库&quot; branch: master &emsp;&emsp;这个时候千万不要用git pull或者git push等命令！应该使用 hexo clean hexo g hexo d hexo d这个命令就可以把你的项目提交到你的github仓库中。 github网址生成&emsp;&emsp;github对我们很友好（吐槽下真的很慢），为我们提供了一个功能，生成了一个网址可以展示仓库中的项目，但这个功能需要手动开启，打开我们的github，找到对应的仓库，找到Setting选项下的GitHub Pages，选择Source中你项目的分支，一般是主分支。实在不行开个翻译，很好找，点击保存后，这样就会显示一个网址，这样就可以访问了。注意：项目名需要xxx.github.io的格式，还需要在_config.yml中找到以下代码。 url: &quot;你生成的网址&quot; root: /项目名 结束语&emsp;&emsp;仔细回想一下，其实挺简单的，主要是什么都不知道，还有没想到的以后再进行补充，欢迎留言评论。]]></content>
       <categories>
         <category>搭建博客</category>
       </categories>
       <tags>
-        <tag>node.js</tag>
+        <tag>node</tag>
         <tag>hexo</tag>
         <tag>github</tag>
       </tags>
