@@ -19,10 +19,10 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>springboot</tag>
         <tag>node</tag>
-        <tag>vue</tag>
+        <tag>springboot</tag>
         <tag>nginx</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -99,8 +99,8 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>springboot</tag>
         <tag>node</tag>
+        <tag>springboot</tag>
         <tag>nginx</tag>
       </tags>
   </entry>
