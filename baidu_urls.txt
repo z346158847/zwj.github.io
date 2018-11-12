@@ -1,3 +1,10 @@
+https://www.zwjblog.top/2018/11/12/Map集合/
+https://www.zwjblog.top/2018/11/12/Set接口/
+https://www.zwjblog.top/2018/11/12/List接口/
+https://www.zwjblog.top/2018/11/12/Iterator接口/
+https://www.zwjblog.top/2018/11/12/Collection/
+https://www.zwjblog.top/2018/11/10/doGet-与doPost/
+https://www.zwjblog.top/2018/11/10/Servlet-一-创建方式/
 https://www.zwjblog.top/2018/11/08/项目经验/
 https://www.zwjblog.top/2018/11/08/仿饿了么项目简单叙述/
 https://www.zwjblog.top/2018/11/07/Math-ceil-floor-round-方法/
