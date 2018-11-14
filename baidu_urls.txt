@@ -1,3 +1,4 @@
+https://www.zwjblog.top/2018/11/13/redis的基本了解/
 https://www.zwjblog.top/2018/11/12/Map集合/
 https://www.zwjblog.top/2018/11/12/Set接口/
 https://www.zwjblog.top/2018/11/12/List接口/

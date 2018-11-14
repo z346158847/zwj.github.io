@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="servlet,">
+  <meta name="keywords" content="redis,">
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
-<meta name="keywords" content="servlet">
+<meta name="description" content="1、redis是什么？redis是一种支持Key-Value等多种数据结构的存储系统。可用于缓存、时间发布或订阅、高速队列等场景。该数据库使用ANSIC语言编写，支持网络，提供字符串、哈希、列表、队列、集合结构直接存取，基于内存，可持久化。 2、支持的语言ActionScript Bash C C# C++ Clojure Common Lisp Crystal D Dart Elixir ema">
+<meta name="keywords" content="redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="doGet()与doPost()">
-<meta property="og:url" content="https://www.zwjblog.top/2018/11/10/doGet-与doPost/index.html">
+<meta property="og:title" content="redis的基本了解">
+<meta property="og:url" content="https://www.zwjblog.top/2018/11/13/redis的基本了解/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
+<meta property="og:description" content="1、redis是什么？redis是一种支持Key-Value等多种数据结构的存储系统。可用于缓存、时间发布或订阅、高速队列等场景。该数据库使用ANSIC语言编写，支持网络，提供字符串、哈希、列表、队列、集合结构直接存取，基于内存，可持久化。 2、支持的语言ActionScript Bash C C# C++ Clojure Common Lisp Crystal D Dart Elixir ema">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T04:44:14.619Z">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2018/0517/185608_7bir_3857802.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2018/0517/185617_DBlU_3857802.png">
+<meta property="og:updated_time" content="2018-11-14T00:44:55.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="doGet()与doPost()">
-<meta name="twitter:description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
+<meta name="twitter:title" content="redis的基本了解">
+<meta name="twitter:description" content="1、redis是什么？redis是一种支持Key-Value等多种数据结构的存储系统。可用于缓存、时间发布或订阅、高速队列等场景。该数据库使用ANSIC语言编写，支持网络，提供字符串、哈希、列表、队列、集合结构直接存取，基于内存，可持久化。 2、支持的语言ActionScript Bash C C# C++ Clojure Common Lisp Crystal D Dart Elixir ema">
+<meta name="twitter:image" content="https://static.oschina.net/uploads/space/2018/0517/185608_7bir_3857802.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://www.zwjblog.top/2018/11/10/doGet-与doPost/">
+  <link rel="canonical" href="https://www.zwjblog.top/2018/11/13/redis的基本了解/">
 
 
 
 
 
-  <title>doGet()与doPost() | 博客</title>
+  <title>redis的基本了解 | 博客</title>
   
 
 
@@ -300,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/10/doGet-与doPost/">
+    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/13/redis的基本了解/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="凝夜紫">
@@ -317,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">doGet()与doPost()</h1>
+          <h1 class="post-title" itemprop="name headline">redis的基本了解</h1>
         
 
         <div class="post-meta">
@@ -329,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T11:12:16+08:00">
-                2018-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T19:24:18+08:00">
+                2018-11-13
               </time>
             
 
@@ -352,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
                   </a>
                 </span>
 
@@ -370,8 +373,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/10/doGet-与doPost/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/doGet-与doPost/" itemprop="commentCount"></span>
+                <a href="/2018/11/13/redis的基本了解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/13/redis的基本了解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +382,7 @@
 
           
           
-             <span id="/2018/11/10/doGet-与doPost/" class="leancloud_visitors" data-flag-title="doGet()与doPost()">
+             <span id="/2018/11/13/redis的基本了解/" class="leancloud_visitors" data-flag-title="redis的基本了解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,14 +419,143 @@
       
 
       
-        <p><em>Get与Post都是向服务器传数据</em><br>在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))<br>所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。<br><strong>建议：</strong><br>1.涉及传密用Post数据提交。<br>2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。<br>使用表单时，如果不指定method，默认为Get方式。<br><strong>区别：</strong></p>
-<h3 id="1-生成方式"><a href="#1-生成方式" class="headerlink" title="1.生成方式"></a>1.生成方式</h3><p>Get有三种：<br>（1）直接在URL地址栏中输入<br>（2）网页中的超链接<br>（3）form中method为get或不设置method<br>Post一种：form中method为post</p>
-<h3 id="2-数据传输方式"><a href="#2-数据传输方式" class="headerlink" title="2.数据传输方式"></a>2.数据传输方式</h3><p>Get方式：表单数据存放在URL地址后面。所有Get方式提交时HTTP中没有消息体<br>Post方式：表单数据存放在HTTP协议的消息体中以实体方式传送到服务器。</p>
-<h3 id="3-服务器获取数据方式"><a href="#3-服务器获取数据方式" class="headerlink" title="3.服务器获取数据方式"></a>3.服务器获取数据方式</h3><p>Get方式：服务器采用request.QueryString来获取变量的值。<br>Post方式：服务器采用request.Form来获取数据。</p>
-<h3 id="4-传送的数据量"><a href="#4-传送的数据量" class="headerlink" title="4.传送的数据量"></a>4.传送的数据量</h3><p>Get方式：数据量长度有限制，一般不超过2kb,因为是参数传递，且在地址中，故数据量有限制。<br>Post方式：适合大规模的数据传送，因为是以实体的方式传送的。</p>
-<h3 id="5-安全性"><a href="#5-安全性" class="headerlink" title="5.安全性"></a>5.安全性</h3><p>Get方式：安全性差，因为是直接将数据显示在地址栏中，浏览器有缓冲，可记录用户信息。所以安全性低。<br>Post方式：安全性较高，因为Post方式提交数据时采用的HTTPpost机制，是将表单中的字段与值放置在HTTP HEADER内一起传送到action所指的URL中，用户是看不见的。</p>
-<h3 id="6-在用户刷新时"><a href="#6-在用户刷新时" class="headerlink" title="6.在用户刷新时"></a>6.在用户刷新时</h3><p>Get方式：不会有任何提示<br>Post方式：会弹出提示框，问用户是否重新提交。</p>
-
+        <h4 id="1、redis是什么？"><a href="#1、redis是什么？" class="headerlink" title="1、redis是什么？"></a>1、redis是什么？</h4><p>redis是一种支持Key-Value等多种数据结构的存储系统。可用于缓存、时间发布或订阅、高速队列等场景。该数据库使用ANSIC语言编写，支持网络，提供字符串、哈希、列表、队列、集合结构直接存取，基于内存，可持久化。</p>
+<h4 id="2、支持的语言"><a href="#2、支持的语言" class="headerlink" title="2、支持的语言"></a>2、支持的语言</h4><pre><code>ActionScript Bash C C# C++ Clojure Common Lisp
+Crystal D Dart Elixir emacs lisp Erlang
+Fancy gawk GNU Prolog Go Haskell Haxe Io Java JavaScript
+Julia Lua Matlab mruby Nim Node.js Objective-C
+OCanl Pascal Perl PHP Pure Data Python R Racket
+Rebol Ruby Rust Scala Scheme Smalltalk Swift Tcl VB VCL
+</code></pre><h4 id="3、redis的应用场景有哪些？"><a href="#3、redis的应用场景有哪些？" class="headerlink" title="3、redis的应用场景有哪些？"></a>3、redis的应用场景有哪些？</h4><p>1.会话缓存（最常用）<br>2.消息队列，比如支付<br>3.活动排行榜或计数<br>4.发布、订阅消息（消息通知）<br>5.商品列表、评论列表等</p>
+<h4 id="4、redis数据类型"><a href="#4、redis数据类型" class="headerlink" title="4、redis数据类型"></a>4、redis数据类型</h4><p>Redis一共支持五种数据类：string(字符串)、hash(哈希)、list(列表)、set(集合)和zset(sorted set 有序集合)。<br><strong>Key:<br>redis本质上是一个key-value数据库，所以我们首先来看看它的key。首先key也是字符串类型，由于key不是binarysafe的字符串，所以像”my key”和”myken\n”这样包含空格和换行的key是不允许的。</strong></p>
+<p>1.string(字符串)<br>它是redis最基本的数据类型，一个key对应一个value，而且string类型是二进制安全的。<br>redis的string可以包含任何数据。包括jpg图片或者序列化的对象。最大上限是1G字节。<br>如果只用string类型，redis就可以被看作加上持久化特性的memcached</p>
+<pre><code>127.0.0.1:6379&gt;set key &quot;hello world&quot;
+OK        //表示成功
+127.0.0.1:6379&gt;get key
+&quot;hello world&quot;        //根据key获取value
+127.0.0.1:6379&gt;mset key1 &quot;hi&quot; key2 &quot;nihao&quot; key3 &quot;hello&quot;
+OK        //多个key-value同时存储
+127.0.0.1:6379&gt;get key1
+&quot;hi&quot;        //分别获取value验证
+127.0.0.1:6379&gt;get key2
+&quot;nihao&quot;
+127.0.0.1:6379&gt;get key3
+&quot;hello&quot;
+127.0.0.1:6379&gt;mget key1 key2 nonexisting
+1)&quot;hi&quot;            //一次获取多个key的值
+2)&quot;nihao&quot;
+3)(nil)            //若key不存在返回nil
+</code></pre><p>2.hash(哈希)<br>redis hash 是一个键值对的集合，是一个string类型的field和value的映射表，适合用于存储对象。</p>
+<pre><code>127.0.0.1:6379&gt;hset redishash 1 &quot;001&quot;
+(integer) 1        
+127.0.0.1:6379&gt;hget redishash 1
+&quot;001&quot;
+127.0.0.1:6379&gt;hmset redishash 1 &quot;001&quot; 2 &quot;002&quot;
+OK
+127.0.0.1:6379&gt;hget redishash 1
+&quot;001&quot;
+127.0.0.1:6379&gt;hget redishash 2
+&quot;002&quot;
+127.0.0.1:6379&gt;hmget redishash 1 2
+1)&quot;001&quot;
+2)&quot;002&quot;
+</code></pre><p>3.list(列表)<br>是redis简单的字符串列表，它按插入顺序排序。<br>每一个子元素都是string类型的双向链表。我们可以通过push，pop操作从链表的头部或者尾部添加删除元素。这使得list既可以用作栈，也可以用作队列。</p>
+<pre><code>127.0.0.1:6379&gt;lpush word hi
+(integer)1        //返回1表示成功，0表示key存在且不是list类型
+127.0.0.1:6379&gt;lpush word hello
+(integer)2
+127.0.0.1:6379&gt;lpush word world
+(integer)3
+127.0.0.1:6379&gt;lrange word 0 2
+1)&quot;hello&quot;
+2)&quot;hi&quot;
+3)&quot;world&quot;
+127.0.0.1:6379&gt;llen word
+(integer)3
+</code></pre><p>4.set(集合)<br>是string类型的无序集合，不可重复。<br>set元素最大可以包含(2的32次方-1)个元素。<br>set的是通过hash table实现的，hash table会随着添加或者删除自动的调整大小。<br>关于set集合类型除了基本的添加删除操作，其他有用的操作还包含集合的取并集(union)，交集(intersection),差集(difference)。通过这些操作可以很容易的实现sns中的好友推荐和blog的tag功能。</p>
+<pre><code>127.0.0.1:6379&gt;sadd redis redisset
+(integer)1
+127.0.0.1:6379&gt;sadd redis redisset1
+(integer)1
+127.0.0.1:6379&gt;sadd redis redisset2
+(integer)1
+127.0.0.1:6379&gt;smembers redis
+1)&quot;redisset1&quot;
+2)&quot;redisset&quot;
+3)&quot;redisset2&quot;
+127.0.0.1:6379&gt;sadd redis redisset2
+(integer)0
+127.0.0.1:6379&gt;smembers redis
+1)&quot;redisset1&quot;
+2)&quot;redisset&quot;
+3)&quot;redisset2&quot;
+127.0.0.1:6379&gt;srem redis redisset
+(integer)1
+127.0.0.1:6379&gt;smembers redis
+1)&quot;redisset1&quot;
+2)&quot;redisset2&quot;
+</code></pre><p>5.zset(sorted set 有序集合)<br>是string类型的有序集合，也不可重复<br>sorted set中的每个元素都会关联一个double类型的score。sorted set的实现是skip list 和hash table的混合体。当元素被添加到集合中时，一个元素到score的映射被添加到hash table中，另一个score到元素的映射被添加到skip并按照score排序，所以就可以有序的获取集合中的元素。根据分数对元素进行升序排序，如果多个元素有相同的分数，则以字典顺序进行升序排序，sorted set 因此非常适合实现排名。</p>
+<pre><code>127.0.0.1:6379&gt;zadd nosql 0 001
+(integer)1
+127.0.0.1:6379&gt;zadd nosql 0 002
+(integer)1
+127.0.0.1:6379&gt;zadd nosql 0 003
+(integer)1
+127.0.0.1:6379&gt;zcount nosql 0 0
+(integer)3
+127.0.0.1:6379&gt;zcount nosql 0 3
+(integer)3
+127.0.0.1:6379&gt;zrem nosql 002
+(integer)1
+127.0.0.1:6379&gt;zcount nosql 0 3
+(integer)2
+127.0.0.1:6379&gt;zscore nosql 003
+&quot;0&quot;
+127.0.0.1:6379&gt;zrangebyscore nosql 0 10
+1)&quot;001&quot;
+2)&quot;003&quot;
+127.0.0.1:6379&gt;zadd nosql 1 003
+(integer)0
+127.0.0.1:6379&gt;zadd nosql 1 004
+(integer)1
+127.0.0.1:6379&gt;zrangebyscore nosql 0 10
+1)&quot;001&quot;
+2)&quot;004&quot;
+3)&quot;003&quot;
+127.0.0.1:6379&gt;zadd nosql 3 005
+(integer)1
+127.0.0.1:6379&gt;zadd nosql 2 006
+(integer)1
+127.0.0.1:6379&gt;zrangebyscore nosql 0 10
+1)&quot;001&quot;
+2)&quot;003&quot;
+3)&quot;004&quot;
+4)&quot;006&quot;
+5)&quot;005&quot;
+</code></pre><h4 id="5-redis服务相关的命令"><a href="#5-redis服务相关的命令" class="headerlink" title="5.redis服务相关的命令"></a>5.redis服务相关的命令</h4><pre><code>127.0.0.1:6379&gt;select 0
+OK
+127.0.0.1:6379&gt;info
+#Server
+-------省略N行
+</code></pre><p>slect #选择数据库（数据库编号0-15）<br>quit #退出连接<br>info #获得服务的信息与统计<br>monitor #实时监控<br>config get #获得服务配置<br>flushdb #删除当前选择的数据库中的key<br>flushall #删除所有数据库中的key</p>
+<h4 id="6-redis的发布与订阅"><a href="#6-redis的发布与订阅" class="headerlink" title="6.redis的发布与订阅"></a>6.redis的发布与订阅</h4><p>redis发布与订阅(pub/sub)是它的一种消息通信模式，一方发送消息，一方接受信息。<br>下图是三个客户端同时订阅同一个频道<br><img src="https://static.oschina.net/uploads/space/2018/0517/185608_7bir_3857802.png" alt="sub"><br>下图是有新信息发送给频道1时。就会将消息发送给订阅它的三个客户端<br><img src="https://static.oschina.net/uploads/space/2018/0517/185617_DBlU_3857802.png" alt="pub"></p>
+<h4 id="7-redis持久化"><a href="#7-redis持久化" class="headerlink" title="7.redis持久化"></a>7.redis持久化</h4><p>redis持久有两种方式:Snapshotting(快照),Append-only file(AOF)</p>
+<p><strong>Snapshotting(快照)</strong></p>
+<p>1、将存储在内存的数据以快照的方式写入二进制文件中，如默认dump.rdb中<br>2、save 900 1</p>
+<p>//900秒内如果超过1个Key被修改，则启动快照保存<br>3、save 300 10</p>
+<p>//300秒内如果超过10个Key被修改，则启动快照保存<br>4、save 60 10000</p>
+<p>//60秒内如果超过10000个Key被修改，则启动快照保存</p>
+<p><strong>Append-only file(AOF)</strong></p>
+<p>1、使用AOF持久时，服务会将每个收到的写命令通过write函数追加到文件中（appendonly.aof）<br>2、AOF持久化存储方式参数说明<br>appendonly yes</p>
+<p>//开启AOF持久化存储方式<br>appendfsync always</p>
+<p>//收到写命令后就立即写入磁盘，效率最差，效果最好<br>appendfsync everysec</p>
+<p>//每秒写入磁盘一次，效率与效果居中<br>appendfsync no</p>
+<p>//完全依赖OS，效率最佳，效果没法保证</p>
+<h4 id="8-redis性能测试"><a href="#8-redis性能测试" class="headerlink" title="8.redis性能测试"></a>8.redis性能测试</h4><p>自带相关测试工具</p>
+<pre><code>[root@text ~]redis-benchmark --help
+实际测试勇士执行100万的请求
+[root@text ~]redis-benchmark -n 1000000 -q
+</code></pre>
       
     </div>
     
@@ -480,7 +612,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/servlet/" rel="tag"><i class="fa fa-tag"></i> servlet</a>
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
           
         </div>
       
@@ -493,8 +625,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/Servlet-一-创建方式/" rel="next" title="Servlet生命周期和创建方式">
-                <i class="fa fa-chevron-left"></i> Servlet生命周期和创建方式
+              <a href="/2018/11/12/Map集合/" rel="next" title="Map集合">
+                <i class="fa fa-chevron-left"></i> Map集合
               </a>
             
           </div>
@@ -502,10 +634,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/12/Collection/" rel="prev" title="Collection接口">
-                Collection接口 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -670,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成方式"><span class="nav-text">1.生成方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据传输方式"><span class="nav-text">2.数据传输方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-服务器获取数据方式"><span class="nav-text">3.服务器获取数据方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-传送的数据量"><span class="nav-text">4.传送的数据量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安全性"><span class="nav-text">5.安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-在用户刷新时"><span class="nav-text">6.在用户刷新时</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、redis是什么？"><span class="nav-text">1、redis是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、支持的语言"><span class="nav-text">2、支持的语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、redis的应用场景有哪些？"><span class="nav-text">3、redis的应用场景有哪些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、redis数据类型"><span class="nav-text">4、redis数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-redis服务相关的命令"><span class="nav-text">5.redis服务相关的命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-redis的发布与订阅"><span class="nav-text">6.redis的发布与订阅</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-redis持久化"><span class="nav-text">7.redis持久化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-redis性能测试"><span class="nav-text">8.redis性能测试</span></a></li></ol></div>
             
 
           </div>
