@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2018/0517/185608_7bir_3857802.png">
 <meta property="og:image" content="https://static.oschina.net/uploads/space/2018/0517/185617_DBlU_3857802.png">
-<meta property="og:updated_time" content="2018-11-14T00:44:55.580Z">
+<meta property="og:updated_time" content="2018-11-14T07:41:07.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis的基本了解">
 <meta name="twitter:description" content="1、redis是什么？redis是一种支持Key-Value等多种数据结构的存储系统。可用于缓存、时间发布或订阅、高速队列等场景。该数据库使用ANSIC语言编写，支持网络，提供字符串、哈希、列表、队列、集合结构直接存取，基于内存，可持久化。 2、支持的语言ActionScript Bash C C# C++ Clojure Common Lisp Crystal D Dart Elixir ema">
@@ -428,7 +428,7 @@ OCanl Pascal Perl PHP Pure Data Python R Racket
 Rebol Ruby Rust Scala Scheme Smalltalk Swift Tcl VB VCL
 </code></pre><h4 id="3、redis的应用场景有哪些？"><a href="#3、redis的应用场景有哪些？" class="headerlink" title="3、redis的应用场景有哪些？"></a>3、redis的应用场景有哪些？</h4><p>1.会话缓存（最常用）<br>2.消息队列，比如支付<br>3.活动排行榜或计数<br>4.发布、订阅消息（消息通知）<br>5.商品列表、评论列表等</p>
 <h4 id="4、redis数据类型"><a href="#4、redis数据类型" class="headerlink" title="4、redis数据类型"></a>4、redis数据类型</h4><p>Redis一共支持五种数据类：string(字符串)、hash(哈希)、list(列表)、set(集合)和zset(sorted set 有序集合)。<br><strong>Key:<br>redis本质上是一个key-value数据库，所以我们首先来看看它的key。首先key也是字符串类型，由于key不是binarysafe的字符串，所以像”my key”和”myken\n”这样包含空格和换行的key是不允许的。</strong></p>
-<p>1.string(字符串)<br>它是redis最基本的数据类型，一个key对应一个value，而且string类型是二进制安全的。<br>redis的string可以包含任何数据。包括jpg图片或者序列化的对象。最大上限是1G字节。<br>如果只用string类型，redis就可以被看作加上持久化特性的memcached</p>
+<p>1.string(字符串)<br>它是redis最基本的数据类型，一个key对应一个value，而且string类型是二进制安全的。<br>redis的string可以包含任何数据。包括jpg图片或者序列化的对象。最大上限是512Mb字节。<br>如果只用string类型，redis就可以被看作加上持久化特性的memcached</p>
 <pre><code>127.0.0.1:6379&gt;set key &quot;hello world&quot;
 OK        //表示成功
 127.0.0.1:6379&gt;get key
@@ -537,7 +537,7 @@ OK
 127.0.0.1:6379&gt;info
 #Server
 -------省略N行
-</code></pre><p>slect #选择数据库（数据库编号0-15）<br>quit #退出连接<br>info #获得服务的信息与统计<br>monitor #实时监控<br>config get #获得服务配置<br>flushdb #删除当前选择的数据库中的key<br>flushall #删除所有数据库中的key</p>
+</code></pre><p>select #选择数据库（数据库编号0-15）<br>quit #退出连接<br>info #获得服务的信息与统计<br>monitor #实时监控<br>config get #获得服务配置<br>flushdb #删除当前选择的数据库中的key<br>flushall #删除所有数据库中的key</p>
 <h4 id="6-redis的发布与订阅"><a href="#6-redis的发布与订阅" class="headerlink" title="6.redis的发布与订阅"></a>6.redis的发布与订阅</h4><p>redis发布与订阅(pub/sub)是它的一种消息通信模式，一方发送消息，一方接受信息。<br>下图是三个客户端同时订阅同一个频道<br><img src="https://static.oschina.net/uploads/space/2018/0517/185608_7bir_3857802.png" alt="sub"><br>下图是有新信息发送给频道1时。就会将消息发送给订阅它的三个客户端<br><img src="https://static.oschina.net/uploads/space/2018/0517/185617_DBlU_3857802.png" alt="pub"></p>
 <h4 id="7-redis持久化"><a href="#7-redis持久化" class="headerlink" title="7.redis持久化"></a>7.redis持久化</h4><p>redis持久有两种方式:Snapshotting(快照),Append-only file(AOF)</p>
 <p><strong>Snapshotting(快照)</strong></p>
