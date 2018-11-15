@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="node,springboot,nginx,vue,">
+  <meta name="keywords" content="node,vue,nginx,springboot,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="项目名： 仿饿了么项目  项目描述： 采用前后端分离开发，前端主要使用Vue+nginx+node.js。后端主要使用SpringBoot。前端部分：展示了商家信息，客户评价和商品信息。利用nginx反向代理到本地tomcat。后端部分：提供了买家订单，订单详情，商品信息和商品类目的管理。 项目实现过程：前端部分：Vue的组件化开发，router路由实现界面跳转，页面布局使用弹性布局。商家信息的背">
-<meta name="keywords" content="node,springboot,nginx,vue">
+<meta name="keywords" content="node,vue,nginx,springboot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="仿饿了么项目简单叙述">
 <meta property="og:url" content="https://www.zwjblog.top/2018/11/08/仿饿了么项目简单叙述/index.html">
@@ -274,6 +274,46 @@
     </div>
   
 </nav>
+
+<!--网站计时-->
+<script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }</script>
+<script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2018, 7 - 1, 17, 15, 00, 00)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '人生的冷暖 &nbsp ' +  currentTime[0] + '年 ' + currentTime[1] + '天 '
+                + currentTime[2] + '时 ' + currentTime[3] + '分 ' + currentTime[4]
+                + '秒' + ' &nbsp 总是一直变幻';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }    setInterval(setTime, 1000);
+</script>
 
 
 
@@ -480,11 +520,11 @@
           
             <a href="/tags/node/" rel="tag"><i class="fa fa-tag"></i> node</a>
           
-            <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
           
             <a href="/tags/nginx/" rel="tag"><i class="fa fa-tag"></i> nginx</a>
           
-            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+            <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
           
         </div>
       
@@ -669,7 +709,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; Mon Oct 29 2018 08:00:00 GMT+0800 (中国标准时间) &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -709,6 +749,8 @@
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       
     </span>
+  
+  <div><span id="htmer_time" "=""></span></div>
   
 </div>
 
