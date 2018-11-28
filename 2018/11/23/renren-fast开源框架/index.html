@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180914110256850?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pkMTAwNzEyOTY1Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180914111210382?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pkMTAwNzEyOTY1Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180914111645903?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pkMTAwNzEyOTY1Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-11-23T12:37:05.488Z">
+<meta property="og:updated_time" content="2018-11-28T05:52:13.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="renren-fast开源框架">
 <meta name="twitter:description" content="人人社区官方文档（删减版）https://www.renren.io/guide#data 今天在投递简历的时候遇到这样一家公司，出了一个面试前的作业，内容如下。  请使用开源框架renren-security或renren-fast/renren-fastplus，实现一个简单demo：                至少三个数据库表（表之间存在依赖关系）；        前端以列表框的形式展示">
@@ -511,9 +511,13 @@
 </blockquote>
 <p>开发环境，需要安装node8.x最新版，尽量使用淘宝镜像<br>利用git，在一个空文件夹下载renren-fast-vue源码，如下</p>
 <blockquote>
-<p>git init  //初始化<br>git clone <a href="https://gitee.com/renrenio/renren-fast-vue" target="_blank" rel="noopener">https://gitee.com/renrenio/renren-fast-vue</a>  //克隆项目<br>cnpm install //安装依赖记得切到项目内运行<br>cnpm run dev  //启动服务<br>生成环境，打包并把dist目录文件部署到nginx中<br>cnpm run build  //构建生产环境（默认）<br>cnpm run build –qa //构建测试环境<br>cnpm run build –uat  //构建验收环境<br>cnpm run build –prod  //构建生产环境  不懂为什么要构建这么多<br>安装nginx，并配置nginx.conf<br>    server {<br>        listen       80;<br>        server_name  localhost;</p>
+<p>git init  //初始化<br>git clone <a href="https://gitee.com/renrenio/renren-fast-vue" target="_blank" rel="noopener">https://gitee.com/renrenio/renren-fast-vue</a>  //克隆项目<br>cnpm install //安装依赖记得切到项目内运行<br>cnpm run dev  //启动服务<br>生成环境，打包并把dist目录文件部署到nginx中<br>cnpm run build  //构建生产环境（默认）<br>cnpm run build –qa //构建测试环境<br>cnpm run build –uat  //构建验收环境<br>cnpm run build –prod  //构建生产环境  不懂为什么要构建这么多<br>安装nginx，并配置nginx.conf</p>
 </blockquote>
-<pre><code>    location / {
+<pre><code>server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
         root   D:\\dist;
         index  index.html index.htm;
     }
@@ -542,11 +546,14 @@ server:
                 username: root
                 password: 1234
 </code></pre><h2 id="数据交互"><a href="#数据交互" class="headerlink" title="数据交互"></a>数据交互</h2><blockquote>
-<p>一般情况下，web项目都是通过session进行认证，每次请求数据时，都会把jsessionid放在cookie中，以便与服务端保持会话<br>本项目是前后端分离的，通过token进行认证（登录时，生成唯一的token凭证），每次请求数据时，都会把token放在header中，服务端解析token，并确定用户身份及用户权限，数据通过json交互<br>数据交互流程：<br>不太懂<br><img src="https://cdn.renren.io/b6541201803082303391694.jpg" alt=""></p>
+<p>一般情况下，web项目都是通过session进行认证，每次请求数据时，都会把jsessionid放在cookie中，以便与服务端保持会话<br>本项目是前后端分离的，通过token进行认证（登录时，生成唯一的token凭证），每次请求数据时，都会把token放在header中，服务端解析token，并确定用户身份及用户权限，数据通过json交互<br>数据交互流程：<br>不太懂</p>
 </blockquote>
+<p><img src="https://cdn.renren.io/b6541201803082303391694.jpg" alt=""></p>
 <h1 id="项目实战"><a href="#项目实战" class="headerlink" title="项目实战"></a>项目实战</h1><h2 id="功能描述"><a href="#功能描述" class="headerlink" title="功能描述"></a>功能描述</h2><blockquote>
-<p>我们来完成一个商品的列表、添加、修改、删除功能，熟悉如何快速开发自己的业务功能模块。<br>我们建一个表，tb_goods<br>   CREATE TABLE <code>tb_goods</code> (<br>        <code>goods_id</code> bigint NOT NULL AUTO_INCREMENT,<br>        <code>name</code> varchar(50) COMMENT ‘商品名’,<br>        <code>intro</code> varchar(500) COMMENT ‘介绍’,<br>        <code>price</code> decimal(10,2) COMMENT ‘价格’,<br>        <code>num</code> int COMMENT ‘数量’,<br>        PRIMARY KEY (<code>goods_id</code>)<br>      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=’商品管理’;</p>
+<p>我们来完成一个商品的列表、添加、修改、删除功能，熟悉如何快速开发自己的业务功能模块。</p>
 </blockquote>
+<p>我们建一个表，tb_goods</p>
+<p>   CREATE TABLE <code>tb_goods</code> (<br>        <code>goods_id</code> bigint NOT NULL AUTO_INCREMENT,<br>        <code>name</code> varchar(50) COMMENT ‘商品名’,<br>        <code>intro</code> varchar(500) COMMENT ‘介绍’,<br>        <code>price</code> decimal(10,2) COMMENT ‘价格’,<br>        <code>num</code> int COMMENT ‘数量’,<br>        PRIMARY KEY (<code>goods_id</code>)<br>      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=’商品管理’;</p>
 <p>接下来，我们利用代码生成器，帮我们生成代码</p>
 <blockquote>
 <p>代码生成器Git地址：<a href="https://gitee.com/renrenio/renren-generator" target="_blank" rel="noopener">https://gitee.com/renrenio/renren-generator</a></p>
@@ -556,30 +563,34 @@ server:
 <p><img src="https://cdn.renren.io/7e850201803082304051612.jpg" alt=""></p>
 <p>我们只需勾选tb_goods，点击【生成代码】按钮，则可生成相应代码，如下所示：</p>
 <p><img src="https://cdn.renren.io/a03aa201803082304328904.jpg" alt=""></p>
-<h2 id="测试项目"><a href="#测试项目" class="headerlink" title="测试项目"></a>测试项目</h2><pre><code>我们先在renren_fast库中，执行goods_menu.sql语句，这个SQL是生成菜单的，SQL语句如下所示：
- -- 菜单SQL
-        INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-            VALUES (&apos;1&apos;, &apos;商品管理&apos;, &apos;modules/generator/goods.html&apos;, NULL, &apos;1&apos;, &apos;fa fa-file-code-o&apos;, &apos;6&apos;);
-        -- 按钮父菜单ID
-        set @parentId = @@identity;
-        -- 菜单对应按钮SQL
-        INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-            SELECT @parentId, &apos;查看&apos;, null, &apos;goods:list,goods:info&apos;, &apos;2&apos;, null, &apos;6&apos;;
-        INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-            SELECT @parentId, &apos;新增&apos;, null, &apos;goods:save&apos;, &apos;2&apos;, null, &apos;6&apos;;
-        INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-            SELECT @parentId, &apos;修改&apos;, null, &apos;goods:update&apos;, &apos;2&apos;, null, &apos;6&apos;;
-        INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-            SELECT @parentId, &apos;删除&apos;, null, &apos;goods:delete&apos;, &apos;2&apos;, null, &apos;6&apos;;
+<h2 id="测试项目"><a href="#测试项目" class="headerlink" title="测试项目"></a>测试项目</h2><p>我们先在renren_fast库中，执行goods_menu.sql语句，这个SQL是生成菜单的，SQL语句如下所示：</p>
+<pre><code>-- 菜单SQL
+       INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
+           VALUES (&apos;1&apos;, &apos;商品管理&apos;, &apos;modules/generator/goods.html&apos;, NULL, &apos;1&apos;, &apos;fa fa-file-code-o&apos;, &apos;6&apos;);
+       -- 按钮父菜单ID
+       set @parentId = @@identity;
+       -- 菜单对应按钮SQL
+       INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
+           SELECT @parentId, &apos;查看&apos;, null, &apos;goods:list,goods:info&apos;, &apos;2&apos;, null, &apos;6&apos;;
+       INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
+           SELECT @parentId, &apos;新增&apos;, null, &apos;goods:save&apos;, &apos;2&apos;, null, &apos;6&apos;;
+       INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
+           SELECT @parentId, &apos;修改&apos;, null, &apos;goods:update&apos;, &apos;2&apos;, null, &apos;6&apos;;
+       INSERT INTO `sys_menu` (`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
+           SELECT @parentId, &apos;删除&apos;, null, &apos;goods:delete&apos;, &apos;2&apos;, null, &apos;6&apos;;
 </code></pre><p>执行完以后可以到数据库中查看表sys_menu确认是否生成</p>
 <p>注意生成代码的同时会生成vue，只需要将</p>
 <blockquote>
-<p>main\resources\src\views\modules\generator<br>该路径下的generator粘贴到vue中对应的modules中即可生成前端页面</p>
+<p>main\resources\src\views\modules\generator</p>
 </blockquote>
+<p>该路径下的generator粘贴到vue中对应的modules中即可生成前端页面</p>
 <p>然后把生成的main目录覆盖renren-fast的main目录，再重启renren-fast，效果如下所示：</p>
 <p><img src="https://cdn.renren.io/64e5f201803082304503806.jpg" alt=""></p>
-<h1 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h1><h2 id="实现一对一查询（如员工带职业属性）"><a href="#实现一对一查询（如员工带职业属性）" class="headerlink" title="实现一对一查询（如员工带职业属性）"></a>实现一对一查询（如员工带职业属性）</h2><p>需要一个新的对象<br>    //省略get,set，构造器<br>    public class EmpVoct {</p>
-<pre><code>    private Integer empId;
+<h1 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h1><h2 id="实现一对一查询（如员工带职业属性）"><a href="#实现一对一查询（如员工带职业属性）" class="headerlink" title="实现一对一查询（如员工带职业属性）"></a>实现一对一查询（如员工带职业属性）</h2><p>需要一个新的对象</p>
+<pre><code>//省略get,set，构造器
+public class EmpVoct {
+
+    private Integer empId;
     private String empName;
     private Integer voctId;
 
@@ -589,21 +600,41 @@ server:
     public EmpVoct() {
     }
 }
-</code></pre><p>EmpMapper.xml<br>    <resultmap id="EmpVoct" type="io.renren.modules.generator.entity.EmpVoct"><br>            <result property="empId" column="emp_id"><br>            <result property="empName" column="emp_name"><br>            <result property="voctId" column="voct_id"><br>            <association property="voctEntity" column="voct_id" select="io.renren.modules.generator.dao.VoctDao.selectVoctById"></association></result></result></result></resultmap></p>
-<pre><code>    &lt;/association&gt;
-&lt;/resultMap&gt;
+</code></pre><p>EmpMapper.xml</p>
+<pre><code>&lt;resultMap id=&quot;EmpVoct&quot; type=&quot;io.renren.modules.generator.entity.EmpVoct&quot;&gt;
+        &lt;result property=&quot;empId&quot; column=&quot;emp_id&quot;/&gt;
+        &lt;result property=&quot;empName&quot; column=&quot;emp_name&quot;/&gt;
+        &lt;result property=&quot;voctId&quot; column=&quot;voct_id&quot;/&gt;
+        &lt;association property=&quot;voctEntity&quot; column=&quot;voct_id&quot; select=&quot;io.renren.modules.generator.dao.VoctDao.selectVoctById&quot;&gt;
 
-&lt;select id=&quot;empVoct&quot; resultMap=&quot;EmpVoct&quot;&gt;
-  select emp_id,v.voct_id,emp_name,voct_name from emp e inner join voct v on e.voct_id = v.voct_id
-&lt;/select&gt;
-</code></pre><p>EmpDao层<br>    @Mapper<br>    public interface EmpDao extends BaseMapper<empentity> {</empentity></p>
-<pre><code>    int deleteByVoctIds(Integer[] voctIds);
+        &lt;/association&gt;
+    &lt;/resultMap&gt;
+
+    &lt;select id=&quot;empVoct&quot; resultMap=&quot;EmpVoct&quot;&gt;
+      select emp_id,v.voct_id,emp_name,voct_name from emp e inner join voct v on e.voct_id = v.voct_id
+    &lt;/select&gt;
+</code></pre><p>EmpDao层</p>
+<pre><code>@Mapper
+public interface EmpDao extends BaseMapper&lt;EmpEntity&gt; {
+
+    int deleteByVoctIds(Integer[] voctIds);
 
     List&lt;EmpVoct&gt;  empVoct();
 
 }
-</code></pre><p>EmpServiceImpl<br>    @Override<br>    public PageUtils queryPage(Map&lt;String, Object&gt; params) {<br>        /<em>Page<empentity> page = this.selectPage(<br>                new Query<empentity>(params).getPage(),<br>                new EntityWrapper<empentity>()<br>        );</empentity></empentity></empentity></em>/<br>        Page<empvoct> page = new Query<empvoct>(params).getPage();<br>        List<empvoct> list = baseMapper.empVoct();<br>        page.setRecords(list);<br>        return new PageUtils(page);<br>    }</empvoct></empvoct></empvoct></p>
-<h1 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开发时，如何连接后台项目api接口？实现前后端对接。<br>修改/static/config/index.js目录文件中 window.SITE_CONFIG[‘baseUrl’] = ‘本地api接口请求地址’;</p>
+</code></pre><p>EmpServiceImpl</p>
+<pre><code>@Override
+public PageUtils queryPage(Map&lt;String, Object&gt; params) {
+    /*Page&lt;EmpEntity&gt; page = this.selectPage(
+            new Query&lt;EmpEntity&gt;(params).getPage(),
+            new EntityWrapper&lt;EmpEntity&gt;()
+    );*/
+    Page&lt;EmpVoct&gt; page = new Query&lt;EmpVoct&gt;(params).getPage();
+    List&lt;EmpVoct&gt; list = baseMapper.empVoct();
+    page.setRecords(list);
+    return new PageUtils(page);
+}
+</code></pre><h1 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>开发时，如何连接后台项目api接口？实现前后端对接。<br>修改/static/config/index.js目录文件中 window.SITE_CONFIG[‘baseUrl’] = ‘本地api接口请求地址’;</p>
 <p>开发时，如何解决跨域？</p>
 <p>转自<a href="https://blog.csdn.net/zd1007129657/article/details/82698854" target="_blank" rel="noopener">https://blog.csdn.net/zd1007129657/article/details/82698854</a></p>
 <p>修改/config/dev.env.js目录文件中OPEN_PROXY: true开启代理<br>修改/config/index.js目录文件中proxyTable对象target: ‘代理api接口请求地址’<br>重启本地服务</p>
@@ -692,6 +723,10 @@ server:
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/11/24/volatile-lock和synchronized/" rel="prev" title="volatile,lock和synchronized">
+                volatile,lock和synchronized <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -772,7 +807,7 @@ server:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -783,7 +818,7 @@ server:
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -794,7 +829,7 @@ server:
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

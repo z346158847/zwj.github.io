@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="servlet,">
+  <meta name="keywords" content="网络,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
-<meta name="keywords" content="servlet">
+<meta name="description" content="转自https://www.cnblogs.com/wust221/p/5414839.html 进程间的八种通信方式–共享内存是最快的IPC方式1.无名管道（pipe）:管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。2.高级管道（popen）:将另一个程序当作一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方">
+<meta name="keywords" content="网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="doGet()与doPost()">
-<meta property="og:url" content="https://www.zwjblog.top/2018/11/10/doGet-与doPost/index.html">
+<meta property="og:title" content="进程间的八种通信方式">
+<meta property="og:url" content="https://www.zwjblog.top/2018/11/28/进程间的八种通信方式/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
+<meta property="og:description" content="转自https://www.cnblogs.com/wust221/p/5414839.html 进程间的八种通信方式–共享内存是最快的IPC方式1.无名管道（pipe）:管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。2.高级管道（popen）:将另一个程序当作一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T04:44:14.619Z">
+<meta property="og:updated_time" content="2018-11-28T05:50:08.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="doGet()与doPost()">
-<meta name="twitter:description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
+<meta name="twitter:title" content="进程间的八种通信方式">
+<meta name="twitter:description" content="转自https://www.cnblogs.com/wust221/p/5414839.html 进程间的八种通信方式–共享内存是最快的IPC方式1.无名管道（pipe）:管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。2.高级管道（popen）:将另一个程序当作一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://www.zwjblog.top/2018/11/10/doGet-与doPost/">
+  <link rel="canonical" href="https://www.zwjblog.top/2018/11/28/进程间的八种通信方式/">
 
 
 
 
 
-  <title>doGet()与doPost() | 博客</title>
+  <title>进程间的八种通信方式 | 博客</title>
   
 
 
@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/10/doGet-与doPost/">
+    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/28/进程间的八种通信方式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="凝夜紫">
@@ -357,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">doGet()与doPost()</h1>
+          <h1 class="post-title" itemprop="name headline">进程间的八种通信方式</h1>
         
 
         <div class="post-meta">
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T11:12:16+08:00">
-                2018-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T13:35:51+08:00">
+                2018-11-28
               </time>
             
 
@@ -392,8 +392,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
                   </a>
                 </span>
 
@@ -410,8 +410,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/10/doGet-与doPost/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/doGet-与doPost/" itemprop="commentCount"></span>
+                <a href="/2018/11/28/进程间的八种通信方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/28/进程间的八种通信方式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +419,7 @@
 
           
           
-             <span id="/2018/11/10/doGet-与doPost/" class="leancloud_visitors" data-flag-title="doGet()与doPost()">
+             <span id="/2018/11/28/进程间的八种通信方式/" class="leancloud_visitors" data-flag-title="进程间的八种通信方式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,13 +456,8 @@
       
 
       
-        <p><em>Get与Post都是向服务器传数据</em><br>在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))<br>所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。<br><strong>建议：</strong><br>1.涉及传密用Post数据提交。<br>2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。<br>使用表单时，如果不指定method，默认为Get方式。<br><strong>区别：</strong></p>
-<h3 id="1-生成方式"><a href="#1-生成方式" class="headerlink" title="1.生成方式"></a>1.生成方式</h3><p>Get有三种：<br>（1）直接在URL地址栏中输入<br>（2）网页中的超链接<br>（3）form中method为get或不设置method<br>Post一种：form中method为post</p>
-<h3 id="2-数据传输方式"><a href="#2-数据传输方式" class="headerlink" title="2.数据传输方式"></a>2.数据传输方式</h3><p>Get方式：表单数据存放在URL地址后面。所有Get方式提交时HTTP中没有消息体<br>Post方式：表单数据存放在HTTP协议的消息体中以实体方式传送到服务器。</p>
-<h3 id="3-服务器获取数据方式"><a href="#3-服务器获取数据方式" class="headerlink" title="3.服务器获取数据方式"></a>3.服务器获取数据方式</h3><p>Get方式：服务器采用request.QueryString来获取变量的值。<br>Post方式：服务器采用request.Form来获取数据。</p>
-<h3 id="4-传送的数据量"><a href="#4-传送的数据量" class="headerlink" title="4.传送的数据量"></a>4.传送的数据量</h3><p>Get方式：数据量长度有限制，一般不超过2kb,因为是参数传递，且在地址中，故数据量有限制。<br>Post方式：适合大规模的数据传送，因为是以实体的方式传送的。</p>
-<h3 id="5-安全性"><a href="#5-安全性" class="headerlink" title="5.安全性"></a>5.安全性</h3><p>Get方式：安全性差，因为是直接将数据显示在地址栏中，浏览器有缓冲，可记录用户信息。所以安全性低。<br>Post方式：安全性较高，因为Post方式提交数据时采用的HTTPpost机制，是将表单中的字段与值放置在HTTP HEADER内一起传送到action所指的URL中，用户是看不见的。</p>
-<h3 id="6-在用户刷新时"><a href="#6-在用户刷新时" class="headerlink" title="6.在用户刷新时"></a>6.在用户刷新时</h3><p>Get方式：不会有任何提示<br>Post方式：会弹出提示框，问用户是否重新提交。</p>
+        <p>转自<a href="https://www.cnblogs.com/wust221/p/5414839.html" target="_blank" rel="noopener">https://www.cnblogs.com/wust221/p/5414839.html</a></p>
+<h1 id="进程间的八种通信方式–共享内存是最快的IPC方式"><a href="#进程间的八种通信方式–共享内存是最快的IPC方式" class="headerlink" title="进程间的八种通信方式–共享内存是最快的IPC方式"></a>进程间的八种通信方式–共享内存是最快的IPC方式</h1><p>1.无名管道（pipe）:管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。<br>2.高级管道（popen）:将另一个程序当作一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方式我们称为高级管道方式。<br>3.有名管道（named pipe）：有名管道也是半双工的通信方式，但它允许无亲缘关系进程间的通信。<br>4.消息队列（message queue）：消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。<br>5.信号量（semophore）：信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不用线程之间的同步手段。<br>6.信号（sinal）：信号是一种比较复杂的通信方式，用于通知接受进程某个事件已经发生。<br>7.共享内存（shared memory）：共享内存就是映射一段能被其他进程所访问的内存，这段内存由一个进程创建，但多个进程都可以访问。==共享内存是最快的IPC方式==，他是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号量配合使用，来实现进程间的同步和通信。<br>8.套接字（socket）：套接字也是一种进程间通信机制，与其他通信机制不同的是，它可用于==不同机器间的进程通信==。</p>
 
       
     </div>
@@ -520,7 +515,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/servlet/" rel="tag"><i class="fa fa-tag"></i> servlet</a>
+            <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
           
         </div>
       
@@ -533,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/Servlet-一-创建方式/" rel="next" title="Servlet生命周期和创建方式">
-                <i class="fa fa-chevron-left"></i> Servlet生命周期和创建方式
+              <a href="/2018/11/24/volatile-lock和synchronized/" rel="next" title="volatile,lock和synchronized">
+                <i class="fa fa-chevron-left"></i> volatile,lock和synchronized
               </a>
             
           </div>
@@ -542,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/12/Collection/" rel="prev" title="Collection接口">
-                Collection接口 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -710,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成方式"><span class="nav-text">1.生成方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据传输方式"><span class="nav-text">2.数据传输方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-服务器获取数据方式"><span class="nav-text">3.服务器获取数据方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-传送的数据量"><span class="nav-text">4.传送的数据量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安全性"><span class="nav-text">5.安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-在用户刷新时"><span class="nav-text">6.在用户刷新时</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程间的八种通信方式–共享内存是最快的IPC方式"><span class="nav-text">进程间的八种通信方式–共享内存是最快的IPC方式</span></a></li></ol></div>
             
 
           </div>

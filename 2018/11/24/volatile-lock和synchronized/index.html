@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="servlet,">
+  <meta name="keywords" content="api,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
-<meta name="keywords" content="servlet">
+<meta name="description" content="个人认为关键的几句话  volatile,它能够使变量在值发生改变时能尽快地让其他线程知道。 Lock不是Java语言内置的，synchronized是Java语言的关键字。 Lock是一个类，通过这个类可以实现同步访问。 synchronized不需要用户去手动释放锁，当synchronized方法或代码块执行完后，系统会自动让线程释放对锁的占用； Lock则必须用户手动释放锁，如果没有主动释放">
+<meta name="keywords" content="api">
 <meta property="og:type" content="article">
-<meta property="og:title" content="doGet()与doPost()">
-<meta property="og:url" content="https://www.zwjblog.top/2018/11/10/doGet-与doPost/index.html">
+<meta property="og:title" content="volatile,lock和synchronized">
+<meta property="og:url" content="https://www.zwjblog.top/2018/11/24/volatile-lock和synchronized/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
+<meta property="og:description" content="个人认为关键的几句话  volatile,它能够使变量在值发生改变时能尽快地让其他线程知道。 Lock不是Java语言内置的，synchronized是Java语言的关键字。 Lock是一个类，通过这个类可以实现同步访问。 synchronized不需要用户去手动释放锁，当synchronized方法或代码块执行完后，系统会自动让线程释放对锁的占用； Lock则必须用户手动释放锁，如果没有主动释放">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-10T04:44:14.619Z">
+<meta property="og:updated_time" content="2018-11-24T06:40:39.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="doGet()与doPost()">
-<meta name="twitter:description" content="Get与Post都是向服务器传数据在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。建议：1.涉及传密用Post数据提交。2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。使用表单时，如果不指定method，默认为Get方式。区别： 1.生成方式Get">
+<meta name="twitter:title" content="volatile,lock和synchronized">
+<meta name="twitter:description" content="个人认为关键的几句话  volatile,它能够使变量在值发生改变时能尽快地让其他线程知道。 Lock不是Java语言内置的，synchronized是Java语言的关键字。 Lock是一个类，通过这个类可以实现同步访问。 synchronized不需要用户去手动释放锁，当synchronized方法或代码块执行完后，系统会自动让线程释放对锁的占用； Lock则必须用户手动释放锁，如果没有主动释放">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://www.zwjblog.top/2018/11/10/doGet-与doPost/">
+  <link rel="canonical" href="https://www.zwjblog.top/2018/11/24/volatile-lock和synchronized/">
 
 
 
 
 
-  <title>doGet()与doPost() | 博客</title>
+  <title>volatile,lock和synchronized | 博客</title>
   
 
 
@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/10/doGet-与doPost/">
+    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/24/volatile-lock和synchronized/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="凝夜紫">
@@ -357,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">doGet()与doPost()</h1>
+          <h1 class="post-title" itemprop="name headline">volatile,lock和synchronized</h1>
         
 
         <div class="post-meta">
@@ -369,8 +369,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T11:12:16+08:00">
-                2018-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-24T13:21:14+08:00">
+                2018-11-24
               </time>
             
 
@@ -410,8 +410,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/10/doGet-与doPost/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/10/doGet-与doPost/" itemprop="commentCount"></span>
+                <a href="/2018/11/24/volatile-lock和synchronized/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/24/volatile-lock和synchronized/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +419,7 @@
 
           
           
-             <span id="/2018/11/10/doGet-与doPost/" class="leancloud_visitors" data-flag-title="doGet()与doPost()">
+             <span id="/2018/11/24/volatile-lock和synchronized/" class="leancloud_visitors" data-flag-title="volatile,lock和synchronized">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,13 +456,14 @@
       
 
       
-        <p><em>Get与Post都是向服务器传数据</em><br>在Servlet中doPost方法里还调用了doGet方法(doGet(request,response))<br>所以在创建Servlet时可以不要doPost方法，通常情况下二者没区别。<br><strong>建议：</strong><br>1.涉及传密用Post数据提交。<br>2.数据查询用Get方式；数据添加、修改或删除时，用Post方式。<br>使用表单时，如果不指定method，默认为Get方式。<br><strong>区别：</strong></p>
-<h3 id="1-生成方式"><a href="#1-生成方式" class="headerlink" title="1.生成方式"></a>1.生成方式</h3><p>Get有三种：<br>（1）直接在URL地址栏中输入<br>（2）网页中的超链接<br>（3）form中method为get或不设置method<br>Post一种：form中method为post</p>
-<h3 id="2-数据传输方式"><a href="#2-数据传输方式" class="headerlink" title="2.数据传输方式"></a>2.数据传输方式</h3><p>Get方式：表单数据存放在URL地址后面。所有Get方式提交时HTTP中没有消息体<br>Post方式：表单数据存放在HTTP协议的消息体中以实体方式传送到服务器。</p>
-<h3 id="3-服务器获取数据方式"><a href="#3-服务器获取数据方式" class="headerlink" title="3.服务器获取数据方式"></a>3.服务器获取数据方式</h3><p>Get方式：服务器采用request.QueryString来获取变量的值。<br>Post方式：服务器采用request.Form来获取数据。</p>
-<h3 id="4-传送的数据量"><a href="#4-传送的数据量" class="headerlink" title="4.传送的数据量"></a>4.传送的数据量</h3><p>Get方式：数据量长度有限制，一般不超过2kb,因为是参数传递，且在地址中，故数据量有限制。<br>Post方式：适合大规模的数据传送，因为是以实体的方式传送的。</p>
-<h3 id="5-安全性"><a href="#5-安全性" class="headerlink" title="5.安全性"></a>5.安全性</h3><p>Get方式：安全性差，因为是直接将数据显示在地址栏中，浏览器有缓冲，可记录用户信息。所以安全性低。<br>Post方式：安全性较高，因为Post方式提交数据时采用的HTTPpost机制，是将表单中的字段与值放置在HTTP HEADER内一起传送到action所指的URL中，用户是看不见的。</p>
-<h3 id="6-在用户刷新时"><a href="#6-在用户刷新时" class="headerlink" title="6.在用户刷新时"></a>6.在用户刷新时</h3><p>Get方式：不会有任何提示<br>Post方式：会弹出提示框，问用户是否重新提交。</p>
+        <p>个人认为关键的几句话</p>
+<ul>
+<li>volatile,它能够使变量在值发生改变时能尽快地让其他线程知道。</li>
+<li>Lock不是Java语言内置的，synchronized是Java语言的关键字。</li>
+<li>Lock是一个类，通过这个类可以实现同步访问。</li>
+<li>synchronized不需要用户去手动释放锁，当synchronized方法或代码块执行完后，系统会自动让线程释放对锁的占用；</li>
+<li>Lock则必须用户手动释放锁，如果没有主动释放锁，就有可能导致出现死锁现象。</li>
+</ul>
 
       
     </div>
@@ -520,7 +521,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/servlet/" rel="tag"><i class="fa fa-tag"></i> servlet</a>
+            <a href="/tags/api/" rel="tag"><i class="fa fa-tag"></i> api</a>
           
         </div>
       
@@ -533,8 +534,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/10/Servlet-一-创建方式/" rel="next" title="Servlet生命周期和创建方式">
-                <i class="fa fa-chevron-left"></i> Servlet生命周期和创建方式
+              <a href="/2018/11/23/renren-fast开源框架/" rel="next" title="renren-fast开源框架">
+                <i class="fa fa-chevron-left"></i> renren-fast开源框架
               </a>
             
           </div>
@@ -543,8 +544,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/12/Collection/" rel="prev" title="Collection接口">
-                Collection接口 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/28/进程间的八种通信方式/" rel="prev" title="进程间的八种通信方式">
+                进程间的八种通信方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -600,17 +601,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -700,22 +692,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成方式"><span class="nav-text">1.生成方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据传输方式"><span class="nav-text">2.数据传输方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-服务器获取数据方式"><span class="nav-text">3.服务器获取数据方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-传送的数据量"><span class="nav-text">4.传送的数据量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安全性"><span class="nav-text">5.安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-在用户刷新时"><span class="nav-text">6.在用户刷新时</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
