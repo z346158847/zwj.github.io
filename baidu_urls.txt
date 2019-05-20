@@ -1,3 +1,9 @@
+https://www.zwjblog.top/2019/02/25/定时任务和日志/
+https://www.zwjblog.top/2019/02/25/MYSQL中concat以及group-concat/
+https://www.zwjblog.top/2019/01/30/equals-小区别/
+https://www.zwjblog.top/2019/01/25/Cron表达式/
+https://www.zwjblog.top/2019/01/10/杂记/
+https://www.zwjblog.top/2018/12/19/OSI参考模型/
 https://www.zwjblog.top/2018/11/28/UDP与TCP区别/
 https://www.zwjblog.top/2018/11/28/进程间的八种通信方式/
 https://www.zwjblog.top/2018/11/24/volatile-lock和synchronized/
