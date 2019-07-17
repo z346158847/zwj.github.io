@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="折腾了一年的服务器，东西有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。 一.Java安装1.检查是否安装检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步 [root@xxx ~]#java -version # 一般是openJDK [root@xxx ~]# rpm -qa | grep openjdk # 卸载openJDK">
+<meta name="description" content="前言用了快一年的服务器，期间学习下载了不少东西，有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。 一.Java安装1.检查是否安装检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步 [root@xxx ~]#java -version # 一般是openJDK [root@xxx ~]# rpm -qa | grep openjdk">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java开发环境配置">
 <meta property="og:url" content="https://www.zwjblog.top/2019/07/16/Java开发环境配置/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="折腾了一年的服务器，东西有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。 一.Java安装1.检查是否安装检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步 [root@xxx ~]#java -version # 一般是openJDK [root@xxx ~]# rpm -qa | grep openjdk # 卸载openJDK">
+<meta property="og:description" content="前言用了快一年的服务器，期间学习下载了不少东西，有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。 一.Java安装1.检查是否安装检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步 [root@xxx ~]#java -version # 一般是openJDK [root@xxx ~]# rpm -qa | grep openjdk">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/007eIU54ly1g52nojhljpj30f008uq3c.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/007eIU54ly1g52pnv6nfxj30ia097js1.jpg">
-<meta property="og:updated_time" content="2019-07-17T09:54:47.266Z">
+<meta property="og:updated_time" content="2019-07-17T10:13:25.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java开发环境配置">
-<meta name="twitter:description" content="折腾了一年的服务器，东西有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。 一.Java安装1.检查是否安装检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步 [root@xxx ~]#java -version # 一般是openJDK [root@xxx ~]# rpm -qa | grep openjdk # 卸载openJDK">
+<meta name="twitter:description" content="前言用了快一年的服务器，期间学习下载了不少东西，有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。 一.Java安装1.检查是否安装检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步 [root@xxx ~]#java -version # 一般是openJDK [root@xxx ~]# rpm -qa | grep openjdk">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007eIU54ly1g52nojhljpj30f008uq3c.jpg">
 
 
@@ -464,7 +464,7 @@
       
 
       
-        <p>折腾了一年的服务器，东西有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开谷歌，搜索，开始踩坑。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用了快一年的服务器，期间学习下载了不少东西，有点乱了，决定将它初始化，顺便重新回顾一下Java开发环境的配置。打开<a href="https://www.google.com/" target="_blank" rel="noopener">谷歌</a>，搜索，开始踩坑。</p>
 <h2 id="一-Java安装"><a href="#一-Java安装" class="headerlink" title="一.Java安装"></a>一.Java安装</h2><h3 id="1-检查是否安装"><a href="#1-检查是否安装" class="headerlink" title="1.检查是否安装"></a>1.检查是否安装</h3><p>检查系统是否安装了JDK（有些会默认装openJDK），若无，忽略这步</p>
 <pre><code>[root@xxx ~]#java -version
 # 一般是openJDK
@@ -882,7 +882,7 @@ fi
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-Java安装"><span class="nav-text">一.Java安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检查是否安装"><span class="nav-text">1.检查是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载Java"><span class="nav-text">2.下载Java</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Mysql的安装"><span class="nav-text">二.Mysql的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检查MariaDB是否安装"><span class="nav-text">1.检查MariaDB是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载Mysql的yum源"><span class="nav-text">2.下载Mysql的yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装Mysql"><span class="nav-text">3.安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-测试连接Mysql服务"><span class="nav-text">4.测试连接Mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-防火墙相关设置"><span class="nav-text">5.防火墙相关设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-设置远程访问（看情况选择）"><span class="nav-text">6.设置远程访问（看情况选择）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-Tomcat安装"><span class="nav-text">三.Tomcat安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载Tomcat"><span class="nav-text">1.下载Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动"><span class="nav-text">2.启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-tomcat配置开机启动和service"><span class="nav-text">3.tomcat配置开机启动和service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-优化tomcat"><span class="nav-text">4.优化tomcat</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-Java安装"><span class="nav-text">一.Java安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检查是否安装"><span class="nav-text">1.检查是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载Java"><span class="nav-text">2.下载Java</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Mysql的安装"><span class="nav-text">二.Mysql的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检查MariaDB是否安装"><span class="nav-text">1.检查MariaDB是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载Mysql的yum源"><span class="nav-text">2.下载Mysql的yum源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装Mysql"><span class="nav-text">3.安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-测试连接Mysql服务"><span class="nav-text">4.测试连接Mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-防火墙相关设置"><span class="nav-text">5.防火墙相关设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-设置远程访问（看情况选择）"><span class="nav-text">6.设置远程访问（看情况选择）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-Tomcat安装"><span class="nav-text">三.Tomcat安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载Tomcat"><span class="nav-text">1.下载Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动"><span class="nav-text">2.启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-tomcat配置开机启动和service"><span class="nav-text">3.tomcat配置开机启动和service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-优化tomcat"><span class="nav-text">4.优化tomcat</span></a></li></ol></li></ol></div>
             
 
           </div>
