@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="查询相关find按规则查找某个文件或文件夹，包括子目录 find . -name &amp;apos;*.sh&amp;apos; -- 以.sh结尾的文件 find . -name &amp;apos;*channel*&amp;apos; -- 包含channel字符的文件 find . -name &amp;apos;build*&amp;apos; -- 以build开头的文件 find . -name &amp;apos;abc??&amp;apos">
+<meta name="description" content="vim 中文乱码 [root@xxx]#locale [root@xxx]#yum install kde-l10n-Chinese [root@xxx]#vim /etc/locale.conf LANG=&amp;quot;zh_CN&amp;quot; [root@xxx]#reboot 防火墙相关systemctl firewalld的基本使用 启动：systemctl start firewalld 查">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux常用命令">
 <meta property="og:url" content="https://www.zwjblog.top/2019/07/17/linux常用命令/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="查询相关find按规则查找某个文件或文件夹，包括子目录 find . -name &amp;apos;*.sh&amp;apos; -- 以.sh结尾的文件 find . -name &amp;apos;*channel*&amp;apos; -- 包含channel字符的文件 find . -name &amp;apos;build*&amp;apos; -- 以build开头的文件 find . -name &amp;apos;abc??&amp;apos">
+<meta property="og:description" content="vim 中文乱码 [root@xxx]#locale [root@xxx]#yum install kde-l10n-Chinese [root@xxx]#vim /etc/locale.conf LANG=&amp;quot;zh_CN&amp;quot; [root@xxx]#reboot 防火墙相关systemctl firewalld的基本使用 启动：systemctl start firewalld 查">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T09:42:05.938Z">
+<meta property="og:updated_time" content="2019-07-17T11:35:46.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令">
-<meta name="twitter:description" content="查询相关find按规则查找某个文件或文件夹，包括子目录 find . -name &amp;apos;*.sh&amp;apos; -- 以.sh结尾的文件 find . -name &amp;apos;*channel*&amp;apos; -- 包含channel字符的文件 find . -name &amp;apos;build*&amp;apos; -- 以build开头的文件 find . -name &amp;apos;abc??&amp;apos">
+<meta name="twitter:description" content="vim 中文乱码 [root@xxx]#locale [root@xxx]#yum install kde-l10n-Chinese [root@xxx]#vim /etc/locale.conf LANG=&amp;quot;zh_CN&amp;quot; [root@xxx]#reboot 防火墙相关systemctl firewalld的基本使用 启动：systemctl start firewalld 查">
 
 
 
@@ -457,7 +457,33 @@
       
 
       
-        <h2 id="查询相关"><a href="#查询相关" class="headerlink" title="查询相关"></a>查询相关</h2><p><strong>find</strong><br><strong>按规则查找某个文件或文件夹，包括子目录</strong></p>
+        <p>vim 中文乱码</p>
+<pre><code>[root@xxx]#locale
+[root@xxx]#yum install kde-l10n-Chinese
+[root@xxx]#vim /etc/locale.conf
+LANG=&quot;zh_CN&quot;
+[root@xxx]#reboot
+</code></pre><h2 id="防火墙相关"><a href="#防火墙相关" class="headerlink" title="防火墙相关"></a>防火墙相关</h2><p><strong>systemctl</strong></p>
+<p><strong>firewalld的基本使用</strong></p>
+<pre><code>启动：systemctl start firewalld
+查看： systemctl status firewalld
+停止： systemctl disable firewalld
+禁用： systemctl stop firewalld
+</code></pre><hr>
+<p><strong>systemctl的基本使用</strong><br>服务</p>
+<pre><code>启动一个服务：systemctl start firewalld.service
+关闭一个服务：systemctl stop firewalld.service
+重启一个服务：systemctl restart firewalld.service
+显示一个服务的状态：systemctl status firewalld.service
+在开机时启用一个服务：systemctl enable firewalld.service
+在开机时禁用一个服务：systemctl disable firewalld.service
+</code></pre><p>端口</p>
+<pre><code>查看所有打开的端口： firewall-cmd --zone=public --list-ports
+开启一个端口：firewall-cmd --zone=public --add-port=80/tcp --permanent （--permanent永久生效，没有此参数重启后失效）
+更新防火墙规则： firewall-cmd --reload
+查看一个端口：firewall-cmd --zone= public --query-port=80/tcp
+删除一个端口：firewall-cmd --zone= public --remove-port=80/tcp --permanent
+</code></pre><h2 id="查询相关"><a href="#查询相关" class="headerlink" title="查询相关"></a>查询相关</h2><p><strong>find</strong><br><strong>按规则查找某个文件或文件夹，包括子目录</strong></p>
 <pre><code>find . -name &apos;*.sh&apos; -- 以.sh结尾的文件
 find . -name &apos;*channel*&apos; -- 包含channel字符的文件
 find . -name &apos;build*&apos; -- 以build开头的文件
@@ -651,6 +677,10 @@ service xinetd restart  启动telnet服务
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/17/nginx安装/" rel="prev" title="nginx安装">
+                nginx安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -731,7 +761,7 @@ service xinetd restart  启动telnet服务
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -742,7 +772,7 @@ service xinetd restart  启动telnet服务
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -753,7 +783,7 @@ service xinetd restart  启动telnet服务
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -814,7 +844,7 @@ service xinetd restart  启动telnet服务
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询相关"><span class="nav-text">查询相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看命令"><span class="nav-text">查看命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件相关"><span class="nav-text">文件相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存相关"><span class="nav-text">内存相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络相关"><span class="nav-text">网络相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具命令"><span class="nav-text">工具命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙相关"><span class="nav-text">防火墙相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询相关"><span class="nav-text">查询相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看命令"><span class="nav-text">查看命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件相关"><span class="nav-text">文件相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存相关"><span class="nav-text">内存相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络相关"><span class="nav-text">网络相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具命令"><span class="nav-text">工具命令</span></a></li></ol></div>
             
 
           </div>

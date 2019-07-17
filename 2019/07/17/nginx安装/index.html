@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="知识点,">
+  <meta name="keywords" content="linux,">
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="主要参考https://www.cnblogs.com/lwbqqyumidi/p/3804883.html 线程(Thread类)、程序和进程关系：一个程序至少有一个进程，一个进程至少有一个线程。进程是程序在计算机上的一次执行活动，是资源分配的基本单位。线程是调度的基本单位，进程包含线程，线程共用进程的资源。进程是资源分配单位，线程是CPU调度单位。 一、线程的生命周期及五种基本状态这是一张比较">
-<meta name="keywords" content="知识点">
+<meta name="description" content="前言Nginx是一个高性能的HTTP和反向代理服务器。 一、添加yum源，Nginx安装Nginx不在默认的yum源中，使用官网的yum源 [root@xxx]#rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm [root@xxx]#yum repo">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多线程的基本理解">
-<meta property="og:url" content="https://www.zwjblog.top/2018/11/02/Java多线程的基本理解/index.html">
+<meta property="og:title" content="nginx安装">
+<meta property="og:url" content="https://www.zwjblog.top/2019/07/17/nginx安装/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="主要参考https://www.cnblogs.com/lwbqqyumidi/p/3804883.html 线程(Thread类)、程序和进程关系：一个程序至少有一个进程，一个进程至少有一个线程。进程是程序在计算机上的一次执行活动，是资源分配的基本单位。线程是调度的基本单位，进程包含线程，线程共用进程的资源。进程是资源分配单位，线程是CPU调度单位。 一、线程的生命周期及五种基本状态这是一张比较">
+<meta property="og:description" content="前言Nginx是一个高性能的HTTP和反向代理服务器。 一、添加yum源，Nginx安装Nginx不在默认的yum源中，使用官网的yum源 [root@xxx]#rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm [root@xxx]#yum repo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541176508012&di=877e29ceea90209d1d422eeb664fe371&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D1189450076%2C1039513584%26fm%3D214%26gp%3D0.jpg">
-<meta property="og:updated_time" content="2018-11-28T08:44:20.000Z">
+<meta property="og:updated_time" content="2019-07-17T11:10:02.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java多线程的基本理解">
-<meta name="twitter:description" content="主要参考https://www.cnblogs.com/lwbqqyumidi/p/3804883.html 线程(Thread类)、程序和进程关系：一个程序至少有一个进程，一个进程至少有一个线程。进程是程序在计算机上的一次执行活动，是资源分配的基本单位。线程是调度的基本单位，进程包含线程，线程共用进程的资源。进程是资源分配单位，线程是CPU调度单位。 一、线程的生命周期及五种基本状态这是一张比较">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541176508012&di=877e29ceea90209d1d422eeb664fe371&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D1189450076%2C1039513584%26fm%3D214%26gp%3D0.jpg">
+<meta name="twitter:title" content="nginx安装">
+<meta name="twitter:description" content="前言Nginx是一个高性能的HTTP和反向代理服务器。 一、添加yum源，Nginx安装Nginx不在默认的yum源中，使用官网的yum源 [root@xxx]#rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm [root@xxx]#yum repo">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://www.zwjblog.top/2018/11/02/Java多线程的基本理解/">
+  <link rel="canonical" href="https://www.zwjblog.top/2019/07/17/nginx安装/">
 
 
 
 
 
-  <title>Java多线程的基本理解 | 博客</title>
+  <title>nginx安装 | 博客</title>
   
 
 
@@ -342,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2018/11/02/Java多线程的基本理解/">
+    <link itemprop="mainEntityOfPage" href="https://www.zwjblog.top/2019/07/17/nginx安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="凝夜紫">
@@ -359,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java多线程的基本理解</h1>
+          <h1 class="post-title" itemprop="name headline">nginx安装</h1>
         
 
         <div class="post-meta">
@@ -372,8 +370,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T19:49:49+08:00">
-                2018-11-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T18:25:42+08:00">
+                2019-07-17
               </time>
             
 
@@ -395,8 +393,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -413,8 +411,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/02/Java多线程的基本理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/02/Java多线程的基本理解/" itemprop="commentCount"></span>
+                <a href="/2019/07/17/nginx安装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/17/nginx安装/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -422,7 +420,7 @@
 
           
           
-             <span id="/2018/11/02/Java多线程的基本理解/" class="leancloud_visitors" data-flag-title="Java多线程的基本理解">
+             <span id="/2019/07/17/nginx安装/" class="leancloud_visitors" data-flag-title="nginx安装">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -459,99 +457,33 @@
       
 
       
-        <p><em>主要参考</em><br><a href="https://www.cnblogs.com/lwbqqyumidi/p/3804883.html" target="_blank" rel="noopener">https://www.cnblogs.com/lwbqqyumidi/p/3804883.html</a></p>
-<p><strong>线程(Thread类)、程序和进程关系：<br>一个程序至少有一个进程，一个进程至少有一个线程。<br>进程是程序在计算机上的一次执行活动，是资源分配的基本单位。<br>线程是调度的基本单位，进程包含线程，线程共用进程的资源。<br>进程是资源分配单位，线程是CPU调度单位。</strong></p>
-<h2 id="一、线程的生命周期及五种基本状态"><a href="#一、线程的生命周期及五种基本状态" class="headerlink" title="一、线程的生命周期及五种基本状态"></a>一、线程的生命周期及五种基本状态</h2><p><em>这是一张比较经典的图片</em></p>
-<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1541176508012&amp;di=877e29ceea90209d1d422eeb664fe371&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D1189450076%2C1039513584%26fm%3D214%26gp%3D0.jpg" alt></p>
-<p><em>Java线程具有五种基本状态</em><br><strong>新建状态（New）：</strong>当线程对象创建后，即进入了新建状态，如 Thread t = new MyThread();<br><strong>就绪状态（Runnable）：</strong>当调用线程对象的start()方法，线程即进入就绪状态。处于就绪状态的线程，只是说明此线程已经做好了准备，随时等待CPU调度执行，并不是说执行了start()此线程立即就会执行；<br><strong>运行状态（Running)：</strong>当CPU开始调度处于就绪状态的线程时，此时线程才得以真正执行，即进入到运行状态。<br>注意：就绪状态是进入到运行状态的唯一入口，也就是说，线程想要进入运行状态执行首先必须处于就绪状态中；<br><strong>阻塞状态（Blocked）：</strong>处于运行状态中的线程由于某种原因，暂时放弃对CPU的使用权，停止执行，此时进入阻塞状态，直到其进入到就绪状态，才有机会再次被CPU调用以进入到运行状态。根据阻塞产生的原因不同，阻塞状态又可以分为三种：<br>1.等待阻塞：运行状态中的线程执行wait()方法，使本线程进入到等待阻塞状态；<br>2.同步阻塞：线程在获取synchronized同步锁失败（因为锁被其它线程所占用），它会进入同步阻塞状态；<br>3.其他阻塞：通过调用线程的sleep()或join()或发出了I/O请求时，线程会进入到阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。<br><strong>死亡状态（Dead）：</strong>线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</p>
-<h2 id="二、Java多线程的创建及启动"><a href="#二、Java多线程的创建及启动" class="headerlink" title="二、Java多线程的创建及启动"></a>二、Java多线程的创建及启动</h2><p><em>Java中线程的创建常见有三种基本形式</em><br><strong>1.继承Thread类，重写该类的run()方法。</strong></p>
-<pre><code>class MyThread extends Thread{
-    private int i = 0;
-    @Override
-    public void run() {
-        for (int i = 0; i &lt; 100; i++) {
-            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);
-        }
-    }
-}
-public class ThreadTest{
-    public static void main(String[] args) {
-    for (int i = 0; i &lt; 100; i++) {
-        System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);
-        if (i == 30){
-            //创建一个新的线程myThread1此线程进入新建状态
-            Thread myThread1 = new MyThread();
-            //创建一个新的线程myThread2此线程进入新建状态
-            Thread myThread2 = new MyThread();
-            //调用start()方法使得线程进入就绪状态
-            myThread1.start();
-            //调用start()方法使得线程进入就绪状态
-            myThread2.start();
-            }
-        }
-    }
-}
-</code></pre><p><strong>输出的结果：</strong></p>
-<pre><code>main 0
-~
-main 99
-Thread-0 0
-~
-Thread-0 99
-Thread-0 0
-~
-Thread-0 99
-</code></pre><p>可以看出虽然当i == 30时，进入判断体，但是线程并没有马上执行，这取决于CPU的调度时机<br><strong>2.实现Runnable接口，并重写该接口的run()方法，该run()方法同样是线程执行体，创建Runnable实体类的实例，并以此实例作为Thread类的target来创建Thread对象，该Thread独享才是真正的线程对象。</strong></p>
-<pre><code>class MyRunnable implements Runnable{
-    private int i = 0;
-    @Override
-    public void run() {
-        for (int i = 0; i &lt; 100; i++) {
-            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);
-        }
-    }
-}
-public class ThreadTest {
-    public static void main(String[] args) {
-        for (int i = 0; i &lt; 100; i++) {
-            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);
-        }
-        //创建一个Runnable实现类的对象
-        Runnable myRunnable = new MyRunnable();
-        //将myRunnable作为Thread target创建新的线程
-        Thread thread1 = new Thread(myRunnable);
-        //调用start()方法使得线程进入就绪状态
-        thread1.start();
-    }
-}
-</code></pre><p>与实现Runnable接口创建线程方式相似，不同的地方在于</p>
-<blockquote>
-<p>Thread thread = new MyThread(myRunnable);</p>
-</blockquote>
-<pre><code>public interface Runnable {
-    public abstract void run();
-
- }
-@Override
-public void run() {
-    if (target != null) {
-        target.run();
-    }
-}
-</code></pre><p><strong>3.使用Callable和Future接口创建线程。具体是创建Callable接口的实现类，并实现clall()方法。并使用FutureTask类来包装Callable实现类的对象，且以此FutureTask对象作为Thread对象的target来创建线程。</strong></p>
-<pre><code>public class FutureTask&lt;V&gt; implements RunnableFuture&lt;V&gt; {
-   //....
-}
-public interface RunnableFuture&lt;V&gt; extends Runnable, Future&lt;V&gt; {
-    void run();
-}
-</code></pre><p><em>注意的是：不能对同一线程对象两次调用start()方法。</em></p>
-<h2 id="三-Java多线程的就绪、运行和死亡状态"><a href="#三-Java多线程的就绪、运行和死亡状态" class="headerlink" title="三. Java多线程的就绪、运行和死亡状态"></a>三. Java多线程的就绪、运行和死亡状态</h2><p>就绪状态转换为运行状态：当此线程得到处理器资源；</p>
-<p>运行状态转换为就绪状态：当此线程主动调用yield()方法或在运行过程中失去处理器资源。</p>
-<p>运行状态转换为死亡状态：当此线程线程执行体执行完毕或发生了异常。</p>
-<p>此处需要特别注意的是：当调用线程的yield()方法时，线程从运行状态转换为就绪状态，但接下来CPU调度就绪状态中的哪个线程具有一定的随机性，因此，可能会出现A线程调用了yield()方法后，接下来CPU仍然调度了A线程的情况。</p>
-<p>由于实际的业务需要，常常会遇到需要在特定时机终止某一线程的运行，使其进入到死亡状态。目前最通用的做法是设置一boolean型的变量，当条件满足时，使线程执行体快速执行完毕。</p>
-
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Nginx是一个高性能的HTTP和反向代理服务器。</p>
+<h2 id="一、添加yum源，Nginx安装"><a href="#一、添加yum源，Nginx安装" class="headerlink" title="一、添加yum源，Nginx安装"></a>一、添加yum源，Nginx安装</h2><p>Nginx不在默认的yum源中，使用官网的yum源</p>
+<pre><code>[root@xxx]#rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+[root@xxx]#yum repolist
+[root@xxx]#yum -y install nginx
+</code></pre><h2 id="二、配置Nginx服务"><a href="#二、配置Nginx服务" class="headerlink" title="二、配置Nginx服务"></a>二、配置Nginx服务</h2><pre><code>systemctl enable nginx //设置开机启动
+systemctl start nginx //启动服务
+systemctl restart nginx  // 重启服务
+systemctl reload nginx  // 重新加载
+</code></pre><h2 id="三、防火墙设置"><a href="#三、防火墙设置" class="headerlink" title="三、防火墙设置"></a>三、防火墙设置</h2><pre><code>#开放80端口
+[root@xxx]#firewall-cmd --permanent --zone=public --add-port=3306/tcp
+[root@xxx]#firewall-cmd --permanent --zone=public --add-port=3306/udp
+#将http服务加入防火墙
+[root@xxx]#firewall-cmd --zone=public --permanent --add-service=http
+</code></pre><h2 id="四、Nginx配置信息"><a href="#四、Nginx配置信息" class="headerlink" title="四、Nginx配置信息"></a>四、Nginx配置信息</h2><p>网站文件存放默认目录</p>
+<pre><code>/usr/share/nginx/html
+</code></pre><p>网站默认站点配置</p>
+<pre><code>/etc/nginx/conf.d/default.conf
+</code></pre><p>Nginx全局配置</p>
+<pre><code>/etc/nginx/nginx.conf
+</code></pre><p>中文乱码</p>
+<pre><code>vim /etc/nginx/conf.d/default.conf
+server {
+  listen      80;
+  server_name  you.domainName.com;
+  charset utf-8;  // 编码改为utf-8就好了
+</code></pre>
       
     </div>
     
@@ -607,7 +539,7 @@ public interface RunnableFuture&lt;V&gt; extends Runnable, Future&lt;V&gt; {
       
         <div class="post-tags">
           
-            <a href="/tags/知识点/" rel="tag"><i class="fa fa-tag"></i> 知识点</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
           
         </div>
       
@@ -620,8 +552,8 @@ public interface RunnableFuture&lt;V&gt; extends Runnable, Future&lt;V&gt; {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/02/SimpleDateFormat/" rel="next" title="SimpleDateFormat">
-                <i class="fa fa-chevron-left"></i> SimpleDateFormat
+              <a href="/2019/07/17/linux常用命令/" rel="next" title="linux常用命令">
+                <i class="fa fa-chevron-left"></i> linux常用命令
               </a>
             
           </div>
@@ -630,8 +562,8 @@ public interface RunnableFuture&lt;V&gt; extends Runnable, Future&lt;V&gt; {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/02/Markdown语法-Hexo/" rel="prev" title="Markdown语法(Hexo)">
-                Markdown语法(Hexo) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/17/PHP开发环境搭建/" rel="prev" title="PHP开发环境搭建">
+                PHP开发环境搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -797,7 +729,7 @@ public interface RunnableFuture&lt;V&gt; extends Runnable, Future&lt;V&gt; {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、线程的生命周期及五种基本状态"><span class="nav-text">一、线程的生命周期及五种基本状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Java多线程的创建及启动"><span class="nav-text">二、Java多线程的创建及启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-Java多线程的就绪、运行和死亡状态"><span class="nav-text">三. Java多线程的就绪、运行和死亡状态</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、添加yum源，Nginx安装"><span class="nav-text">一、添加yum源，Nginx安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、配置Nginx服务"><span class="nav-text">二、配置Nginx服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、防火墙设置"><span class="nav-text">三、防火墙设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Nginx配置信息"><span class="nav-text">四、Nginx配置信息</span></a></li></ol></div>
             
 
           </div>
