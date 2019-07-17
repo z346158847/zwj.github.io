@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="先来看看百度概念：网络爬虫： 又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的成为网页追逐者，是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。 自己的理解暂时是，用程序帮我们去发送请求，获取数据，也可以获取html中的信息。 一个朋友需要合肥美团酒店的信息。 最开始的想法是利用fiddler去截取手机app中请求，找到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-04T10:56:21.659Z">
+<meta property="og:updated_time" content="2019-07-17T07:35:11.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="美团酒店爬虫">
 <meta name="twitter:description" content="先来看看百度概念：网络爬虫： 又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的成为网页追逐者，是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。 自己的理解暂时是，用程序帮我们去发送请求，获取数据，也可以获取html中的信息。 一个朋友需要合肥美团酒店的信息。 最开始的想法是利用fiddler去截取手机app中请求，找到">
@@ -433,22 +433,26 @@
       
 
       
-        <p>先来看看百度概念：<br>网络爬虫： 又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的成为网页追逐者，是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
+        <p>先来看看百度概念：<br><strong>网络爬虫</strong>： 又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的成为网页追逐者，是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。</p>
 <p>自己的理解暂时是，用程序帮我们去发送请求，获取数据，也可以获取html中的信息。</p>
 <p>一个朋友需要合肥美团酒店的信息。</p>
 <p>最开始的想法是利用fiddler去截取手机app中请求，找到获取数据的请求以及所需要的参数，但是失败了，fiddler的证书之前我给删了，怎么也安不上QAQ，难受。<br>经过一番百度，发现<a href="http://i.meituan.com" target="_blank" rel="noopener">美团</a>这个网址好像就是手机端的，然后大概想法就是找到获取数据的请求地址以及所需要的参数，然后利用okhttp发送请求，获取数据流，利用jackson反序列化为对象，再用poi工具导出excel文件。</p>
 <p>有了想法就开始搞</p>
-<p><a href="http://i.meituan.com/awp/h5/hotel/list/list.html?cityId=56&amp;checkIn=2019-06-04&amp;checkOut=2019-06-05&amp;lat=40.043888&amp;lng=116.340587&amp;accommodationType=1&amp;sort=smart" target="_blank" rel="noopener">美团酒店合肥地区</a><br>找到页面，F12开发者工具Network中，发现 <a href="https://ihotel.meituan.com/hbsearch/HotelSearch?utm_medium=touch&amp;version_name=999.9&amp;platformid=1&amp;cateId=20&amp;newcate=1&amp;limit=20&amp;offset=0&amp;cityId=56&amp;ci=56&amp;startendday=20190604~20190604&amp;startDay=20190604&amp;endDay=20190604&amp;mypos=40.043888%2C116.340587&amp;attr_28=129&amp;sort=defaults&amp;uuid=BDD0ADA22FEB012F5848CEFD4A9478DFE998293D6D786607A8911CEE208CC1D6&amp;lat=40.043888&amp;lng=116.340587&amp;accommodationType=1" target="_blank" rel="noopener">HotelSearch</a><br>这个请求应该就是获取数据了。丢到postman看看，返回的是json格式的，limit有限制应该是30多，offset从第几行，uuid暂时没什么好办法，访问一次写死。<br>能拿到数据就能动手写了，随便搞个springboot项目跑起来。<br>spring-boot-starter-web和okhttp依赖。<br>开启spring定时任务 启动类加@EnableScheduling<br>创建一个工具类OkhttpUtils,交给spring容器管理@Component</p>
+<pre><code>美团酒店合肥地区酒店请求地址：http://i.meituan.com/awp/h5/hotel/list/list.html?cityId=56&amp;checkIn=2019-06-04&amp;checkOut=2019-06-05&amp;lat=40.043888&amp;lng=116.340587&amp;accommodationType=1&amp;sort=smart
+</code></pre><p>找到页面，F12开发者工具Network中，发现旅店信息搜索</p>
+<pre><code>HotelSearch：https://ihotel.meituan.com/hbsearch/HotelSearch?utm_medium=touch&amp;version_name=999.9&amp;platformid=1&amp;cateId=20&amp;newcate=1&amp;limit=20&amp;offset=0&amp;cityId=56&amp;ci=56&amp;startendday=20190604~20190604&amp;startDay=20190604&amp;endDay=20190604&amp;mypos=40.043888%2C116.340587&amp;attr_28=129&amp;sort=defaults&amp;uuid=BDD0ADA22FEB012F5848CEFD4A9478DFE998293D6D786607A8911CEE208CC1D6&amp;lat=40.043888&amp;lng=116.340587&amp;accommodationType=1
+</code></pre><p>这个请求应该就是获取数据了。丢到postman看看，返回的是json格式的，limit有限制应该是30多，offset从第几行，uuid暂时没什么好办法，访问一次写死。<br>能拿到数据就能动手写了，随便搞个springboot项目跑起来。<br>spring-boot-starter-web和okhttp依赖。<br>开启spring定时任务 启动类加@EnableScheduling<br>创建一个工具类OkhttpUtils,交给spring容器管理@Component</p>
 <pre><code>// 每次取30行
 int limit = 30;
 // 从第offset行取
 int offset = 0;
-
-/**
-*  1.cron是设置定时执行的表达式，如 0 0/5 * * * ?每隔五分钟执行一次 秒 分 时 天 月
-</code></pre><p>　　 <em> 2.zone表示执行时间的时区
-　　 </em> 3.fixedDelay 和fixedDelayString 表示一个固定延迟时间执行，上个任务完成后，延迟多长时间执行<br>　　 <em> 4.fixedRate 和fixedRateString表示一个固定频率执行，上个任务开始后，多长时间后开始执行
-　　 </em> 5.initialDelay 和initialDelayString表示一个初始延迟时间，第一次被调用前延迟的时间<br>　　 */</p>
+</code></pre><ol>
+<li>cron是设置定时执行的表达式，如 0 0/5 <em> </em> * ?每隔五分钟执行一次 秒 分 时 天 月</li>
+<li>zone表示执行时间的时区</li>
+<li>fixedDelay 和fixedDelayString 表示一个固定延迟时间执行，上个任务完成后，延迟多长时间执行</li>
+<li>fixedRate 和fixedRateString表示一个固定频率执行，上个任务开始后，多长时间后开始执行</li>
+<li>initialDelay 和initialDelayString表示一个初始延迟时间，第一次被调用前延迟的时间</li>
+</ol>
 <pre><code>//@Scheduled(cron=&quot;0/3 * * * * ?&quot;)
 //@Scheduled(fixedDelay =200 * 1000)
 @Scheduled(initialDelay=1000, fixedRate=20 * 1000)
@@ -677,7 +681,7 @@ public final class ExcelUtils {
     }
 }
 </code></pre><p>ok，跑起来就会在硬盘里生成多个xls文件，顺便学了下合并xls文件：wps -&gt; 数据 -&gt; 合并表格 -&gt; 多个工作表合并为一个工作表。把80多个xls合并成一个了，ok交差。</p>
-<p>这部分数据主要是酒店的简介，名称，评分，地址，最低价格等。很明显满足不了需求呀~于是新的需求来了，要酒店的详细信息，比如联系方式，评价，入住时间等，这些肯定是得点进去才能看到的，那就点一下呗。<br><a href="https://ihotel.meituan.com/group/v1/poi/119900698?utm_medium=touch&amp;version_name=999.9&amp;platformid=1&amp;start=1559606400000&amp;end=1559692800000&amp;mypos=40.043888%2C116.340587&amp;cityId=1&amp;subtype=0&amp;type=1&amp;isRecommend=0&amp;recType=0&amp;isLocal=1&amp;entryType=2&amp;fields=phone%2CscoreSource%2CmarkNumbers%2CcityId%2Caddr%2Clng%2ChasGroup%2CsubwayStationId%2Ccates%2CfrontImg%2CchooseSitting%2Cwifi%2CavgPrice%2Cstyle%2CfeatureMenus%2CavgScore%2Cname%2CparkingInfo%2Clat%2CcateId%2Cintroduction%2CshowType%2CareaId%2CdistrictId%2Cpreferent%2ClowestPrice%2CcateName%2CareaName%2CzlSourceType%2CcampaignTag%2CmallName%2CmallId%2CbrandId%2CbrandName%2CbrandLogo%2CbrandStory%2CsmPromotion%2Cktv%2Cgeo%2ChistoryCouponCount%2Crecommendation%2CiUrl%2CisQueuing%2CnewPayInfo%2CpayInfo%2CsourceType%2Cabstracts%2CgroupInfo%2CisSuperVoucher%2Cdiscount%2CisWaimai%2CcollectionDeals%2CnearPoi%2Csparkle%2CtopicList%2CcityIds%2CshowChannel%2CshowStatus&amp;_token=eJyVUduOqkgU%2FRce%2BqVNU0VRXDoxE0BFEFtbBIGTE8NVbgJCIeJk%2Fn3oc8nJPE6lkrX2qp19WfU31WoR9Q7BdNgZdY9b6p2Cb%2BCNo2YU6aYXjEUOsRgBnsczKvyPBjEzaUFrL6j3bxDzzAwCnv3%2BJR0m5RsvcDOM%2BO%2BzP4xhp%2FuVoU0JVEpI073TdPZ2jTPS%2B9VbWF9pf2joFNNpTeKSbuqMjmK%2FfEvJtfxrirRoDqEoAsCJwktH%2FJYcs2s8%2FzEU4NivTcBLXEV%2FVJERfqohOU8F5gyDeMSxoshhQcT8F2E5jmV4gBCADI8gz3NAOIfgHPMcB7GAWcwIPBQhQAJ39qu%2BLM81PEc%2FRpxKEv8SnIvJReaFjM3U9uVZrkr%2FMidtH09O%2Fu89u7jrsro63%2Fq4HeeQmhy7HifHJix%2Bof8Lye94O33d1KvLLtXEYv2xsrpVzzylLe2FcaJomwYwo6jLR3kY5C7bBP0r2o7GJ7Fl7cM6tZckAXUf2kIhpcdk%2FbwXTqI2vWOtn%2BGHfISo5xIRCLvU8OhX01lh5%2BRy%2B9xc6FFihB7LLrU8NWVU%2BdJFeLSxw28ES7bdbjC4PbvVtKVwQ%2BO6UMcoDIwSKd6iqhV2p8taoGkeEhTVy1Z905ml3waVP1x2dK7b7arkP9lLvRywlSeb02fT%2B%2Bxw0ZTYXbnKqXI3Ertf2IYKU9sZkRodd7W%2BTRSiSMou1auuNSP1mFa74uLrGzkMUdEeGMOU7nIALLhT7qfBdlTt4%2FWQ96r9eNrSLrllD61mF3bGLej79ZYfrlYU1yN%2BOMuFoAdGZfYCuYcf2kLfm4CMz1PnycfRssdggXYNua2jNAGuaq9xOXZm%2B8m7ulEeMY32m0S3sa17dbHV3QYapm10gpWgLbMU7CzdlGK7f8icqCpuHNf93beBdmWGdZoqUBdgURTVDeCNqO59q4MiqpTlNrd7bcAmsy%2Bfkh8FjW9XWLjlV5SXuCp7Fd2ZV5SzjiI9Tx5N8ymJ2PCeuzfCiS5T5Mo1OqCAdrzoAJmMqEFLgoqXGd%2BSAndO%2FfMvtl9MOA%3D%3D" target="_blank" rel="noopener">美团酒店详细信息</a></p>
+<p>这部分数据主要是酒店的简介，名称，评分，地址，最低价格等。很明显满足不了需求呀~于是新的需求来了，要酒店的详细信息，比如联系方式，评价，入住时间等，这些肯定是得点进去才能看到的，那就点一下呗。<br><a href="https://ihotel.meituan.com/group/v1/poi/119900698?utm_medium=touch&amp;version_name=999.9&amp;platformid=1&amp;start=1559606400000&amp;end=1559692800000&amp;mypos=40.043888%2C116.340587&amp;cityId=1&amp;subtype=0&amp;type=1&amp;isRecommend=0&amp;recType=0&amp;isLocal=1&amp;entryType=2&amp;fields=phone%2CscoreSource%2CmarkNumbers%2CcityId%2Caddr%2Clng%2ChasGroup%2CsubwayStationId%2Ccates%2CfrontImg%2CchooseSitting%2Cwifi%2CavgPrice%2Cstyle%2CfeatureMenus%2CavgScore%2Cname%2CparkingInfo%2Clat%2CcateId%2Cintroduction%2CshowType%2CareaId%2CdistrictId%2Cpreferent%2ClowestPrice%2CcateName%2CareaName%2CzlSourceType%2CcampaignTag%2CmallName%2CmallId%2CbrandId%2CbrandName%2CbrandLogo%2CbrandStory%2CsmPromotion%2Cktv%2Cgeo%2ChistoryCouponCount%2Crecommendation%2CiUrl%2CisQueuing%2CnewPayInfo%2CpayInfo%2CsourceType%2Cabstracts%2CgroupInfo%2CisSuperVoucher%2Cdiscount%2CisWaimai%2CcollectionDeals%2CnearPoi%2Csparkle%2CtopicList%2CcityIds%2CshowChannel%2CshowStatus&amp;_token=eJyVUduOqkgU%2FRce%2BqVNU0VRXDoxE0BFEFtbBIGTE8NVbgJCIeJk%2Fn3oc8nJPE6lkrX2qp19WfU31WoR9Q7BdNgZdY9b6p2Cb%2BCNo2YU6aYXjEUOsRgBnsczKvyPBjEzaUFrL6j3bxDzzAwCnv3%2BJR0m5RsvcDOM%2BO%2BzP4xhp%2FuVoU0JVEpI073TdPZ2jTPS%2B9VbWF9pf2joFNNpTeKSbuqMjmK%2FfEvJtfxrirRoDqEoAsCJwktH%2FJYcs2s8%2FzEU4NivTcBLXEV%2FVJERfqohOU8F5gyDeMSxoshhQcT8F2E5jmV4gBCADI8gz3NAOIfgHPMcB7GAWcwIPBQhQAJ39qu%2BLM81PEc%2FRpxKEv8SnIvJReaFjM3U9uVZrkr%2FMidtH09O%2Fu89u7jrsro63%2Fq4HeeQmhy7HifHJix%2Bof8Lye94O33d1KvLLtXEYv2xsrpVzzylLe2FcaJomwYwo6jLR3kY5C7bBP0r2o7GJ7Fl7cM6tZckAXUf2kIhpcdk%2FbwXTqI2vWOtn%2BGHfISo5xIRCLvU8OhX01lh5%2BRy%2B9xc6FFihB7LLrU8NWVU%2BdJFeLSxw28ES7bdbjC4PbvVtKVwQ%2BO6UMcoDIwSKd6iqhV2p8taoGkeEhTVy1Z905ml3waVP1x2dK7b7arkP9lLvRywlSeb02fT%2B%2Bxw0ZTYXbnKqXI3Ertf2IYKU9sZkRodd7W%2BTRSiSMou1auuNSP1mFa74uLrGzkMUdEeGMOU7nIALLhT7qfBdlTt4%2FWQ96r9eNrSLrllD61mF3bGLej79ZYfrlYU1yN%2BOMuFoAdGZfYCuYcf2kLfm4CMz1PnycfRssdggXYNua2jNAGuaq9xOXZm%2B8m7ulEeMY32m0S3sa17dbHV3QYapm10gpWgLbMU7CzdlGK7f8icqCpuHNf93beBdmWGdZoqUBdgURTVDeCNqO59q4MiqpTlNrd7bcAmsy%2Bfkh8FjW9XWLjlV5SXuCp7Fd2ZV5SzjiI9Tx5N8ymJ2PCeuzfCiS5T5Mo1OqCAdrzoAJmMqEFLgoqXGd%2BSAndO%2FfMvtl9MOA%3D%3D" target="_blank" rel="noopener">美团酒店详细信息请求地址</a></p>
 <p>这个请求地址有点长。。。不过不怕，我们发现 poi后边跟的是 /数字，一般来说就是对应的@PathVariable id占位符了，我找到之前爬出来的数据，发现poiid就是对应的id，有一点担心的是token，一般来说是做防止重复请求的，但测了一下发现，应该是时效性的token，对于我来说，影响不大，接下来的思路就是取出之前的poiid -&gt; 替换掉请求 -&gt; 获取数据 -&gt; 导出excel</p>
 <p>一步一步来吧，首先我感觉从excel读poiid挺麻烦的，就想着能不能输出到txt里，感觉好取一些，生命在于折腾。</p>
 <pre><code>// 把导出excel替换掉
@@ -835,7 +839,7 @@ public  void getHotelInfo(){
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>点击可以领取一个对象</div>
+  <div>沉迷学习，无法自拔</div>
   <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>开心</span>
   </button>
@@ -846,8 +850,7 @@ public  void getHotelInfo(){
     
       <div id="alipay" style="display: inline-block">
         <img id="alipay_qr" src="/images/love.jpg" alt="凝夜紫 支付宝">
-        <p>&nbsp; &nbsp; new &nbsp; 张伟杰，喏~送给你！</p>
-        <p>&nbsp; 嘿！别跑呀！</p>
+        <p>&nbsp; &nbsp; &nbsp; 扫一扫，喏~送给你！</p>
       </div>
     
 
@@ -896,6 +899,10 @@ public  void getHotelInfo(){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/Java开发环境配置/" rel="prev" title="Java开发环境配置">
+                Java开发环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -958,7 +965,7 @@ public  void getHotelInfo(){
               <img class="site-author-image" itemprop="image" src="/images/qqtouxiang.jpg" alt="凝夜紫">
             
               <p class="site-author-name" itemprop="name">凝夜紫</p>
-              <p class="site-description motion-element" itemprop="description">最美的你不是生如夏花，而是在时间的长河里波澜不惊。</p>
+              <p class="site-description motion-element" itemprop="description">当你发现自己的才华撑不起野心时，就请安静下来学习吧。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -968,7 +975,7 @@ public  void getHotelInfo(){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -979,7 +986,7 @@ public  void getHotelInfo(){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -990,7 +997,7 @@ public  void getHotelInfo(){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1747,5 +1754,5 @@ public  void getHotelInfo(){
   
 
   
-<script src="/live2dw/lib/L2Dwidget.min.js?bd2294fafea3389ee458f1d9be5a2157"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":125,"height":250},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?bd2294fafea3389ee458f1d9be5a2157"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":125,"height":250},"mobile":{"show":true,"scale":0.3},"log":false});</script></body>
 </html>
